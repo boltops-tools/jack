@@ -35,7 +35,7 @@ You're ready to go.
 
 ## Usage
 
-### Overeview
+### Overview
 
 In your project folder create a folder call jack/cfg.  It might be useful for your company to create a baseline config that you can use.  If you do not already have a baseline template, you can download the template from an existing environment like so:
 
@@ -49,7 +49,13 @@ The path of config that is saved is based on a convention.  An example best illu
 $ jack config download stag-rails-app-s1
 </pre>
 
-Results in a saved jack/cfg/stag-rails-app.cfg.yml template configuration file.  Notice how the last dash separated word has been removed.
+Results in a saved jack/cfg/stag-rails-app.cfg.yml template configuration file.  Notice how the last dash separated word has been removed.  The convention is overridable. 
+
+<pre>
+$ jack config download -c myconfig stag-rails-app-s1
+</pre>
+
+Results in a saved jack/cfg/myconfig.cfg.yml template configuration file. 
 
 ### Creating Environments
 
@@ -58,6 +64,7 @@ The purpose of the jack/cfg configs is allow us to be able environments with a c
 <pre>
 $ jack create stag-rails-app-s1 # uses the jack/cfg/stag-rails-app.cfg.yml template
 $ jack create stag-rails-app-s2 # another instance of the environment, but still uses the jack/cfg/stag-rails-app.cfg.yml template
+$ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on naming convention
 </pre>
 
 If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  
