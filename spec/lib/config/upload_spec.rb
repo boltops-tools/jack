@@ -5,7 +5,7 @@ describe Jack::Config::Upload do
     Jack::UI.mute = true
   end
 
-  let(:upload) { Jack::Config::Upload.new(test_options) }
+  let(:upload) { Jack::Config::Upload.new(test_options.merge(silent: true)) }
 
   describe "upload" do
     it "upload code paths" do
