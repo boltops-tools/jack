@@ -47,6 +47,14 @@ The path of config that is saved is based on a convention.  An example best illu
 
 <pre>
 $ jack config download stag-rails-app-s1
+Downloading config file...
+Running: eb config save --cfg current-2015-03-03_18-40-34 stag-rails-app-s1
+
+Configuration saved at: /Users/tung/src/rails/.elasticbeanstalk/saved_configs/current-2015-03-03_18-40-34.cfg.yml
+Writing to local config file: jack/cfg/stag-rails-app.cfg.yml
+Cleaning up eb remote config and local files
+Config downloaded to jack/cfg/stag-rails-app.cfg.yml
+$ 
 </pre>
 
 Results in a saved jack/cfg/stag-rails-app.cfg.yml template configuration file.  Notice how the last dash separated word has been removed.  The convention is overridable. 
@@ -91,17 +99,19 @@ To upload a template configuration.
 $ jack config upload stag-rails-app-s1
 ```
 
-This will save the config to jack/cfg/stag-rails-app.cfg.yml.
+This will save the config to jack/cfg/stag-rails-app.cfg.yml.  Here's an example of the [output](http://d.pr/i/14Sfh).
+
+Notice that the `eb config upload` command also prompts you with the diff before uploading and ask for confirmation.  You can bypass the prompt with the force option.
 
 #### Diff - Comparing your local config to the live environment config
 
-Comparing your local config to what configs the environment is actually using is useful.  To see the diff.
+You can use the diff command directly to compare your local config to what configs the environment is actually using is useful.  To see the diff.  
 
 ```
 $ jack config diff stag-rails-app-s1
 ```
 
-A note about the configs.  They are formatted so that the keys are sorted.  This has been done so the diffs are actually useful.  The `eb config upload` command also will automatically prompt you with the diff before uploading and ask for confirmation unless the force option has been specified.
+A note about the configs.  They are formatted so that the keys are sorted.  This has been done so the diffs are actually useful.  It is also recommended you install colordiff so you can see the diff output colorized.  You can also specify your own diff viewer via the JACK_DIFF environment variable.  Example of [colorized diff](http://d.pr/i/9wrS).
 
 ### More Help
 

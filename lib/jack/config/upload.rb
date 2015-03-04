@@ -31,7 +31,7 @@ module Jack
 
       def upload
         return false unless local_cfg_exist?
-        UI.say("Using #{@local_config_path} for upload")
+        UI.say("Copying #{@local_config_path} to #{@upload_path} for the upload")
         cp_to_save_configs
         upload_to_eb
         clean_up
