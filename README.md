@@ -67,7 +67,7 @@ Results in a saved jack/cfg/myconfig.cfg.yml template configuration file.
 
 ### Creating Environments
 
-The purpose of the jack/cfg configs is allow us to be able environments with a codified configuration file that can be versioned controlled.
+The purpose of the jack/cfg configs is allow us to be able to create environments with a codified configuration file that can be versioned controlled.
 
 <pre>
 $ jack create stag-rails-app-s1 # uses the jack/cfg/stag-rails-app.cfg.yml template
