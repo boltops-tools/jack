@@ -16,6 +16,7 @@ test/version_tmp
 tmp
 spec/fixtures/*/.elasticbeanstalk/saved_configs
 spec/fixtures/fake.cfg.yml
+spec/fixtures/project/.elasticbeanstalk/config.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

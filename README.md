@@ -7,7 +7,7 @@ For things that this tool does not do, it is recommended that you use use the un
 ## Installation
 
 ```
-$ gem install jack
+$ gem install jack-eb
 ```
 
 ### Setup
@@ -75,9 +75,7 @@ $ jack create stag-rails-app-s2 # another instance of the environment, but still
 $ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on naming convention
 </pre>
 
-If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  
-
-`eb init` requires some flags in order to avoid prompting.  Jack has minimal default flags set [here](https://github.com/tongueroo/jack/blob/master/lib/jack/default/create.yml).  These defaults can be overriden and added to by creating a ~/.jack/create.yml file in your home directory or a jack/create.yml within the project folder.  The options from each file is merged using the following precedence: project folder, user home, default that is packaged with this gem.  Please use `eb init --help` to see what flags you can set.
+If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  By default, the latest Docker solution stack is used for the platform option.  But you can override that by creating an ~/.jack/create.yml or jack/create.yml within the project folder.  Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged using the following precedence: project folder, user home, default that is packaged with this gem.  Most of the settings that `jack create` should used should be in the template configuration file though.
 
 ### Downloading and Uploading Template Configurations
 

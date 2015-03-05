@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jack/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "jack"
+  spec.name          = "jack-eb"
   spec.version       = Jack::VERSION
   spec.authors       = ["Tung Nguyen"]
   spec.email         = ["tongueroo@gmail.com"]
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.executables   = ["jack"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
