@@ -6,7 +6,6 @@ describe Jack::Config::YamlFormatter do
   describe "sorter" do
     it "process should sort the keys" do
       input = <<-EOL
---- 
 EnvironmentConfigurationMetadata: 
   Description: test.
   Foo: 1
@@ -19,7 +18,6 @@ EOL
       output = File.read(file)
 
       expect(output).to eq <<-EOL
---- 
 AWSConfigurationTemplateVersion: 1.1.0.0
 EnvironmentConfigurationMetadata: 
   Description: test.
@@ -29,7 +27,6 @@ EOL
 
     it "process should strip date modified and created" do
       input = <<-EOL
---- 
 EnvironmentConfigurationMetadata: 
   DateModified: '1425215243000'
   Description: test.
@@ -43,7 +40,6 @@ EOL
       output = File.read(file)
 
       expect(output).to eq <<-EOL
---- 
 AWSConfigurationTemplateVersion: 1.1.0.0
 EnvironmentConfigurationMetadata: 
   Description: test.
