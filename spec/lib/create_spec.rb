@@ -15,7 +15,6 @@ describe Jack::Create do
       # puts "command  = #{command }"
       expect(command).to include('eb create')
       expect(command).to include('--cname stag-rails-app-s9')
-      expect(command).to include('--platform "64bit Amazon Linux 2014.09 v1.2.0 running Docker 1.3.3"')
       expect(command).to include('--keyname "default"')
       expect(command).to include('--cfg stag-rails-app')
       expect(command).to include('stag-rails-app-s9')
@@ -27,6 +26,7 @@ describe Jack::Create do
     end
 
     it "list solution stacks" do
+      @create = Jack::Create.new(test_options.merge(noop: false))
       expect(@create).to receive(:solution_stacks).and_return(solution_stacks)
       expect(@create.latest_docker_platform).to eq "64bit Amazon Linux 2014.09 v1.2.0 running Docker 1.3.3"
     end

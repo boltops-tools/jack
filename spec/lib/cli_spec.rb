@@ -12,7 +12,6 @@ describe Jack::CLI do
       # puts out
       expect(out).to include('eb create')
       expect(out).to include('--cname stag-rails-app-s9')
-      expect(out).to include('--platform "64bit Amazon Linux 2014.09 v1.2.0 running Docker 1.3.3"')
       expect(out).to include('--keyname "default"')
       expect(out).to include('--cfg stag-rails-app')
       expect(out).to include('stag-rails-app-s9')

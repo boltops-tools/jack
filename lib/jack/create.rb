@@ -27,6 +27,7 @@ module Jack
     end
 
     def latest_docker_platform
+      return if @options[:noop] # for cli spec
       solution_stacks.grep(/Docker/).reject {|x| x =~ /Preconfigured/}.sort.last
     end
 
