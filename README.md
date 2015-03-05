@@ -6,7 +6,7 @@
 
 Jack is a wrapper tool around the eb cli tool that can be use to manage AWS Elastic Beanstalk environments.  It allows you to create environments based on a saved template configuration file, located in the jack/cfg folder of your project.  It also provides a helpful config command to manage the template configuration. 
 
-For things that this tool does not do, it is recommended that you use use the underlying eb tool directly.  This tool uses version 3.1.2 of the eb command.
+For things that this tool does not do, it is recommended that you use use the underlying eb tool directly.  This tool has been tested with the 3.1.2 version of the eb command, so have at least that version installed.
 
 ## Installation
 
