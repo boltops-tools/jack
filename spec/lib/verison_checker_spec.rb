@@ -6,7 +6,7 @@ describe Jack::VersionChecker do
   describe "version checker" do
     it "should exit if version is less than required version" do
       expect(checker).to receive(:get_version).and_return("EB CLI 3.0.0 (Python 2.7.6)")
-      expect(checker).to receive(:leave)
+      expect(checker).to receive(:leave).at_least(:once)
       checker.run
     end
 
