@@ -10,6 +10,8 @@ For things that this tool does not do, it is recommended that you use use the un
 $ gem install jack-eb
 ```
 
+Note that the gem is called jack-eb but the command that is installed is called jack.
+
 ### Setup
 
 This gem relies on the eb cli tool.  To install follow the instructions on [AWS EB Documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html).  Here's the gist of it:
