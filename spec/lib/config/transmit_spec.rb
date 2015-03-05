@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'ostruct'
 
 describe Jack::Config do
   before(:all) do
