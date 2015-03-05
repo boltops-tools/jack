@@ -18,8 +18,21 @@ module Jack
 
     def ensure_eb_init
       unless File.exist?("#{@root}/.elasticbeanstalk/config.yml")
-        do_cmd(%Q|eb init -p "#{create_yaml['platform']}" "#{@app_name}"|, @options)
+        do_cmd(%Q|eb init -p "#{platform}" "#{@app_name}"|, @options)
       end
+    end
+
+    def platform
+      create_yaml['platform'] || latest_docker_platform
+    end
+
+    def latest_docker_platform
+      solution_stacks.grep(/Docker/).reject {|x| x =~ /Preconfigured/}.sort.last
+    end
+
+    # for specs
+    def solution_stacks
+      eb.list_available_solution_stacks.solution_stacks
     end
 
     def create_env
