@@ -12,6 +12,7 @@ module Jack
         super
         @current_path = "#{@saved_configs}/current-#{timestamp}.cfg.yml"
         @current_name = extract_name(@current_path)
+        sync_eb_config_yml
       end
 
       def run

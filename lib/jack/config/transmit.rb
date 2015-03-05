@@ -17,8 +17,6 @@ module Jack
 
         local_config_name = options[:cfg] || config_name_convention(@env_name)
         @local_config_path = "jack/cfg/#{local_config_name}.cfg.yml"
-
-        sync_eb_config_yml
       end
 
       def eb_config_path
