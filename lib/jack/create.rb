@@ -9,6 +9,7 @@ module Jack
       @root = options[:root] || '.'
       @env_name = options[:env_name]
       @app_name = options[:app_name] || app_name_convention(@env_name)
+      @upload = Config::Upload.new(@options)
     end
 
     def run
@@ -17,9 +18,18 @@ module Jack
     end
 
     def ensure_eb_init
-      unless File.exist?("#{@root}/.elasticbeanstalk/config.yml")
+      if app_name_mismatch
         do_cmd(%Q|eb init -p "#{platform}" "#{@app_name}"|, @options)
       end
+    end
+
+    def app_name_mismatch
+      return true unless File.exist?("#{@root}/.elasticbeanstalk/config.yml")
+      return if @options[:noop]
+      eb_config_path = @upload.eb_config_path
+      data = YAML.load_file(eb_config_path)
+      application_name = data['global']['application_name']
+      application_name != @app_name
     end
 
     def platform
@@ -63,7 +73,6 @@ module Jack
     end
 
     def upload_cfg
-      @upload = Config::Upload.new(@options)
       if @upload.local_cfg_exist?
         @upload.upload 
         cfg = "--cfg #{@upload.upload_name} "
