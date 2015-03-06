@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jack-eb (0.0.3)
+    jack-eb (0.0.4)
       aws-sdk (~> 2)
       colorize
       thor
