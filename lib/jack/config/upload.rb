@@ -88,10 +88,6 @@ EOL
         FileUtils.rm_f(@upload_path)
       end
 
-      def ensure_folder_exist(folder)
-        FileUtils.mkdir_p(folder) unless File.exist?(folder)
-      end
-
     end
   end
 end

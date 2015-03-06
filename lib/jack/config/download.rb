@@ -12,7 +12,7 @@ module Jack
         super
         @current_path = "#{@saved_configs}/current-#{timestamp}.cfg.yml"
         @current_name = extract_name(@current_path)
-        sync_eb_config_yml
+        EbConfig::Update.new(env_name: @env_name).sync unless options[:noop]
       end
 
       def run

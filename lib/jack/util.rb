@@ -16,5 +16,9 @@ module Jack
       @@eb ||= Aws::ElasticBeanstalk::Client.new(region: region)
     end
 
+    def ensure_folder_exist(folder)
+      FileUtils.mkdir_p(folder) unless File.exist?(folder)
+    end
+
   end
 end
