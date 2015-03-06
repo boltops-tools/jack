@@ -11,7 +11,7 @@ module Jack
         @root = options[:root] || '.'
         @env_name = options[:env_name]
         @eb_config_path = "#{@root}/.elasticbeanstalk/config.yml"
-        ensure_folder_exist(@eb_config_path)
+        ensure_folder_exist(File.dirname(@eb_config_path))
       end
 
       def sync
