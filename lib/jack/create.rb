@@ -12,8 +12,21 @@ module Jack
     end
 
     def run
+      create_app
       EbConfig::Create.new(@options).sync unless @options[:noop]
       create_env
+    end
+
+    def create_app
+      eb.create_application(
+        application_name: @app_name
+      ) unless app_exist?
+    end
+
+    def app_exist?
+      return true if @options[:noop]
+      r = eb.describe_applications
+      r.applications.collect(&:application_name).include?(@app_name)
     end
 
     def create_env
