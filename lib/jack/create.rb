@@ -37,7 +37,7 @@ module Jack
     def build_command
       @cfg = upload_cfg
       flags = CreateYaml.new.flags
-      "eb create --nohang #{flags} #{@cfg}#{cname}#{@env_name}"
+      "eb create --sample --nohang #{flags} #{@cfg}#{cname}#{@env_name}"
     end
 
     def upload_cfg
