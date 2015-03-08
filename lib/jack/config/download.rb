@@ -12,7 +12,8 @@ module Jack
         super
         @current_path = "#{@saved_configs}/current-#{timestamp}.cfg.yml"
         @current_name = extract_name(@current_path)
-        EbConfig::Update.new(env_name: @env_name).sync unless options[:noop]
+        @updater = EbConfig::Update.new(env_name: @env_name)
+        @updater.sync unless options[:noop]
       end
 
       def run
@@ -56,7 +57,7 @@ module Jack
         return if @options[:dirty]
         UI.say "Cleaning up eb remote config and local files" unless silent
         eb.delete_configuration_template(
-          application_name: @app_name,
+          application_name: @updater.app_name,
           template_name: current_name
         ) unless @options[:noop]
         FileUtils.rm_f(@current_path)
