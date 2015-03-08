@@ -71,6 +71,13 @@ $ jack config download -c myconfig stag-rails-app-s1
 
 Results in a saved jack/cfg/myconfig.cfg.yml template configuration file. 
 
+#### Configuration Templates
+
+Configuration templates hold all the options and settings that we can set for an EB environment.  Elastic Beanstalk surfaces a portion of all the settings actually available on the underlying AWS Resources that we are allowed to configured.  These includes the some of the ELB behavior, VPC, LaunchConfiguration, Autoscaling settings, hard drive size, environment variables, etc.   
+
+* [Here](https://gist.github.com/tongueroo/acc421c5ec998f238b4b) is an example of all the settings available.
+* [Here](https://gist.github.com/tongueroo/f22bbae7864ecec41ff3) is an example of what you would tyically see when you download the initial saved configuration.
+
 ### Creating Environments
 
 The purpose of the jack/cfg configs is allow us to be able to create environments with a codified configuration file that can be versioned controlled.
