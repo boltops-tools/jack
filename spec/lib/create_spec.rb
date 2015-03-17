@@ -8,7 +8,7 @@ describe Jack::Create do
   describe "jack" do
     it "create environment" do
       command = @create.build_command
-      # puts "command  = #{command }"
+      puts "command  = #{command }"
       expect(command).to include('eb create')
       expect(command).to include('--cname stag-rails-app-s9')
       expect(command).to include('--keyname "default"')

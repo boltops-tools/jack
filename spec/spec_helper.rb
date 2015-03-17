@@ -35,6 +35,8 @@ global:
   default_platform: 64bit Amazon Linux 2014.09 v1.2.0 running Docker 1.3.3
 EOL
       path = "#{@root}/.elasticbeanstalk/config.yml"
+      dir = File.dirname(path)
+      FileUtils.mkdir_p(dir) unless File.exist?(path)
       File.write(path, data) unless File.exist?(path)
   end
 
@@ -44,5 +46,6 @@ RSpec.configure do |c|
   c.include Helpers
   c.before :all do
     @root = "spec/fixtures/project"
+    fake_eb_config
   end
 end

@@ -49,7 +49,7 @@ In your project folder create a folder call jack/cfg.  It might be useful for yo
 $ jack config download [ENVIRONMENT_NAME]
 </pre>
 
-The path of config that is saved is based on a convention.  An example best illustrates the convention.
+The path of config that is saved is based on the environment name.
 
 <pre>
 $ jack config download stag-rails-app-s1
@@ -57,13 +57,13 @@ Downloading config file...
 Running: eb config save --cfg current-2015-03-03_18-40-34 stag-rails-app-s1
 
 Configuration saved at: /Users/tung/src/rails/.elasticbeanstalk/saved_configs/current-2015-03-03_18-40-34.cfg.yml
-Writing to local config file: jack/cfg/stag-rails-app.cfg.yml
+Writing to local config file: jack/cfg/stag-rails-app-s1.cfg.yml
 Cleaning up eb remote config and local files
 Config downloaded to jack/cfg/stag-rails-app.cfg.yml
 $ 
 </pre>
 
-Results in a saved jack/cfg/stag-rails-app.cfg.yml template configuration file.  Notice how the last dash separated word has been removed.  The convention is overridable. 
+Results in a saved jack/cfg/stag-rails-app-s1.cfg.yml template configuration file.  This is overridable. 
 
 <pre>
 $ jack config download -c myconfig stag-rails-app-s1
@@ -83,9 +83,9 @@ Configuration templates hold all the options and settings that we can set for an
 The purpose of the jack/cfg configs is allow us to be able to create environments with a codified configuration file that can be versioned controlled.
 
 <pre>
-$ jack create stag-rails-app-s1 # uses the jack/cfg/stag-rails-app.cfg.yml template
-$ jack create stag-rails-app-s2 # another instance of the environment, but still uses the jack/cfg/stag-rails-app.cfg.yml template
-$ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on naming convention
+$ jack create stag-rails-app-s1 # uses the jack/cfg/stag-rails-app-s1.cfg.yml template
+$ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s1.cfg.yml template
+$ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on environment naming convention
 </pre>
 
 If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  By default, the latest Docker solution stack is used for the platform option.  But you can override that by creating an ~/.jack/create.yml or jack/create.yml within the project folder.  Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged using the following precedence: project folder, user home, default that is packaged with this gem.  Most of the settings that `jack create` should used should be in the template configuration file though.
@@ -100,7 +100,7 @@ To download a template configuration.
 $ jack config download stag-rails-app-s1
 ```
 
-This will save the config to jack/cfg/stag-rails-app.cfg.yml.
+This will save the config to jack/cfg/stag-rails-app-s1.cfg.yml.
 
 #### Upload
 
@@ -110,7 +110,7 @@ To upload a template configuration.
 $ jack config upload stag-rails-app-s1
 ```
 
-This will save the config to jack/cfg/stag-rails-app.cfg.yml.  Here's an example of the [output](http://d.pr/i/14Sfh).
+This will save the config to jack/cfg/stag-rails-app-s1.cfg.yml.  Here's an example of the [output](http://d.pr/i/14Sfh).
 
 Notice that the `eb config upload` command also prompts you with the diff before uploading and ask for confirmation.  You can bypass the prompt with the force option.
 

@@ -15,12 +15,8 @@ module Jack
 
         @saved_configs = "#{@root}/.elasticbeanstalk/saved_configs"
 
-        local_config_name = options[:cfg] || config_name_convention(@env_name)
+        local_config_name = options[:cfg] || @env_name
         @local_config_path = "jack/cfg/#{local_config_name}.cfg.yml"
-      end
-
-      def config_name_convention(env_name)
-        env_name.split('-')[0..-2].join('-')
       end
 
       def timestamp
