@@ -21,10 +21,20 @@ module Jack
       end
 
       def download
+        add_gitignore
         get_current_cfg
         copy_to_local_cfg
         clean
         UI.say "Config downloaded to #{@local_config_path}".colorize(:green)
+      end
+
+      def add_gitignore
+        path = "#{@root}/.gitignore"
+        if File.exist?(path)
+          ignores = IO.read(path)
+          has_ignore = ignores.include?("jack/cfg")
+        end
+        do_cmd("echo 'jack/cfg/*.yml' >> #{path}") unless has_ignore
       end
 
       def get_current_cfg

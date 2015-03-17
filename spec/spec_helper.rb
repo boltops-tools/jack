@@ -48,4 +48,7 @@ RSpec.configure do |c|
     @root = "spec/fixtures/project"
     fake_eb_config
   end
+  c.after :all do
+    FileUtils.rm_f("#{@root}/.gitignore")
+  end
 end
