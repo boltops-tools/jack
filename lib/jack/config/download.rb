@@ -21,7 +21,7 @@ module Jack
       end
 
       def download
-        add_gitignore
+        # add_gitignore
         get_current_cfg
         copy_to_local_cfg
         clean
