@@ -84,7 +84,7 @@ The purpose of the jack/cfg configs is allow us to be able to create environment
 
 <pre>
 $ jack create stag-rails-app-s1 # uses the jack/cfg/stag-rails-app-s1.cfg.yml template
-$ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s1.cfg.yml template
+$ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s2.cfg.yml template
 $ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on environment naming convention
 </pre>
 
