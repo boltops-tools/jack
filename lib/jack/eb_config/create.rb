@@ -8,7 +8,7 @@ module Jack
       end
 
       def platform
-        CreateYaml.new.data['platform'] || latest_docker_platform
+        CreateYaml.new.data['Platform'] || latest_docker_platform
       end
 
       def app_name
