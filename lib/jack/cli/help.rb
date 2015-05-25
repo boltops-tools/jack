@@ -34,7 +34,7 @@ Example:
 
 $ jack config upload stag-rails-app-s1
 
-$ jack config upload -a myapp -c myconfig stag-rails-app-s1
+$ jack config upload myapp -c myconfig stag-rails-app-s1
 EOL
         end
 
@@ -48,7 +48,7 @@ Example:
 
 $ jack config download stag-rails-app-s1
 
-$ jack config download -a myapp -c myconfig stag-rails-app-s1
+$ jack config download myapp -c myconfig stag-rails-app-s1
 EOL
         end
 
@@ -65,7 +65,7 @@ Example:
 
 $ jack config diff stag-rails-app-s1
 
-$ jack config diff -a myapp -c myconfig stag-rails-app-s1
+$ jack config diff myapp -c myconfig stag-rails-app-s1
 EOL
         end
 
