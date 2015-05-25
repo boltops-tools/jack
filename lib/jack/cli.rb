@@ -7,6 +7,7 @@ module Jack
   class ConfigCLI < Thor
     desc "upload ENV_NAME", "upload and apply jack config changes to EB environment"
     long_desc Jack::CLI::Help.upload
+    option :force, aliases: :f, type: :boolean, desc: "skip prompt"
     def upload(env_name)
       Jack::Config::Upload.new(options.merge(env_name: env_name)).run
     end

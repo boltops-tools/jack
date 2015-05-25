@@ -47,7 +47,7 @@ overwrite your #{@local_config_path} instead, you can use this command:
 $ jack config download #{@env_name}
 $ jack config help download # for more info
 EOL
-        print "yes/no? [no] " unless @options[:silent]
+        print "yes/no? [no] " unless @options[:silent] || @options[:force]
         answer = get_answer
         answer =~ /^y/
       end
