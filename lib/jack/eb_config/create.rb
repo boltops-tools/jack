@@ -16,7 +16,7 @@ module Jack
       end
 
       def latest_docker_platform
-        solution_stacks.grep(/Docker/).reject {|x| x =~ /Preconfigured/}.sort.last
+        "64bit Amazon Linux 2015.03 v1.4.0 running Docker 1.6.0"
       end
    
       def solution_stacks
