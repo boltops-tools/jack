@@ -24,10 +24,13 @@ This gem relies on the eb cli tool.  To install follow the instructions on [AWS 
 $ sudo pip install awsebcli
 </pre>
 
-You need at least version 3.1.2 of the eb tool.  To check the version `eb --version`.  If you need to upgrade:
+You 3.3.2 version of the eb tool.  To check the version `eb --version`.  If you need to upgrade:
 
 <pre>
-$ sudo pip install --upgrade awsebcli
+cd ~/ && wget https://pypi.python.org/packages/source/a/awsebcli/awsebcli-3.3.2.tar.gz
+tar -zxvf awsebcli-3.3.2.tar.gz
+cd awsebcli-3.3.2
+sudo python
 </pre>
 
 You'll also need to set up your environment with your aws access keys since the tool also uses the aws-sdk.  Add the following to your ~/.profile, replacing xxx with your actually credentials.  Don't forgot to source the ~/.profile or open up a new terminal.
@@ -140,3 +143,4 @@ $ jack config help sort
 ### TODO
 
 * encrypted the jack/cfg files similar to how [shopify/ejson](https://github.com/Shopify/ejson) works, except with yaml - pull requests are welcome
+
