@@ -30,7 +30,7 @@ You 3.3.2 version of the eb tool.  To check the version `eb --version`.  If you 
 cd ~/ && wget https://pypi.python.org/packages/source/a/awsebcli/awsebcli-3.3.2.tar.gz
 tar -zxvf awsebcli-3.3.2.tar.gz
 cd awsebcli-3.3.2
-sudo python
+sudo python setup.py install
 </pre>
 
 You'll also need to set up your environment with your aws access keys since the tool also uses the aws-sdk.  Add the following to your ~/.profile, replacing xxx with your actually credentials.  Don't forgot to source the ~/.profile or open up a new terminal.
