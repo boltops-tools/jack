@@ -132,7 +132,6 @@ $ jack help
 $ jack help create
 $ jack config help download
 $ jack config help upload
-$ jack config help upload
 $ jack config help sort
 </pre>
 
