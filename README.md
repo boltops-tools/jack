@@ -18,13 +18,7 @@ Note that the gem is called jack-eb but the command that is installed is called 
 
 ### Setup
 
-This gem relies on the eb cli tool.  To install follow the instructions on [AWS EB Documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html).  Here's the gist of it:
-
-<pre>
-$ sudo pip install awsebcli
-</pre>
-
-You 3.3.2 version of the eb tool.  To check the version `eb --version`.  If you need to upgrade:
+This gem relies on a specific version of the eb cli tool.  You need the 3.3.2 version of the eb tool.  To check the version `eb --version`.  
 
 <pre>
 cd ~/ && wget https://pypi.python.org/packages/source/a/awsebcli/awsebcli-3.3.2.tar.gz
@@ -32,6 +26,8 @@ tar -zxvf awsebcli-3.3.2.tar.gz
 cd awsebcli-3.3.2
 sudo python setup.py install
 </pre>
+
+More detail instructions are on [AWS EB Documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html), but you do need version 3.3.2 of the awsebcli tool.
 
 You'll also need to set up your environment with your aws access keys since the tool also uses the aws-sdk.  Add the following to your ~/.profile, replacing xxx with your actually credentials.  Don't forgot to source the ~/.profile or open up a new terminal.
 
