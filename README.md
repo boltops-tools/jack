@@ -1,5 +1,6 @@
 # Jack and the Elastic Beanstalk
 
+[![ReadmeCI](http://www.readmeci.com/images/readmeci-badge.svg)](http://www.readmeci.com/tongueroo/jack)
 [![Build Status](https://travis-ci.org/tongueroo/jack.svg?branch=master)](https://travis-ci.org/tongueroo/jack)
 [![Code Climate](https://codeclimate.com/github/tongueroo/jack/badges/gpa.svg)](https://codeclimate.com/github/tongueroo/jack)
 [![Test Coverage](https://codeclimate.com/github/tongueroo/jack/badges/coverage.svg)](https://codeclimate.com/github/tongueroo/jack)
@@ -138,4 +139,3 @@ $ jack config help sort
 ### TODO
 
 * encrypted the jack/cfg files similar to how [shopify/ejson](https://github.com/Shopify/ejson) works, except with yaml - pull requests are welcome
-
