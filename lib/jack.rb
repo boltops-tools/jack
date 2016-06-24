@@ -7,7 +7,7 @@ require File.expand_path("../jack/ext/hash", __FILE__)
 module Jack
   autoload :CLI, 'jack/cli'
   autoload :Create, 'jack/create'
-  autoload :CreateYaml, 'jack/create_yaml'
+  autoload :Settings, 'jack/settings'
   autoload :EbConfig, 'jack/eb_config'
   autoload :Config, 'jack/config'
   autoload :UI, 'jack/ui'

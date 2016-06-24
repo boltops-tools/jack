@@ -28,7 +28,7 @@ module Jack
 
       def cleanup_files
         return false if @options[:dirty]
-        @download.clean(silent=true)
+        @download.clean(mute=true)
       end
 
       def diff_command

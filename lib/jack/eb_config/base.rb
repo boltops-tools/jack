@@ -27,8 +27,8 @@ module Jack
 
       def write_eb_config_yml
         data = YAML.load_file(eb_config_path)
-        data['global']['application_name'] = app_name
-        data['global']['default_platform'] = platform
+        data['global']['application_name'] = app_name # from subclass
+        data['global']['default_platform'] = platform # from subclass
         dump = YAML.dump(data).gsub("!ruby/object:Hash", '')
         dump = dump.split("\n")[1..-1].join("\n") # strip first line
         File.write(eb_config_path, dump)

@@ -63,9 +63,9 @@ module Jack
       end
 
       # remove both the local download file and remote eb config
-      def clean(silent=false)
+      def clean(mute=false)
         return if @options[:dirty]
-        UI.say "Cleaning up eb remote config and local files" unless silent
+        UI.say "Cleaning up eb remote config and local files" unless mute
         eb.delete_configuration_template(
           application_name: @updater.app_name,
           template_name: current_name

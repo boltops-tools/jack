@@ -36,12 +36,16 @@ module Jack
 
     def build_command
       @cfg = upload_cfg
-      flags = CreateYaml.new.flags
+      flags = settings.create_flags
       "eb create --sample --nohang #{flags} #{@cfg}#{cname}#{@env_name}"
     end
 
+    def settings
+      @settings ||= Settings.new(@root)
+    end
+
     def upload_cfg
-      @upload = Config::Upload.new(@options.merge(skip_sync: true))
+      @upload = Config::Upload.new(@options)
       if @upload.local_cfg_exist?
         @upload.upload 
         cfg = "--cfg #{@upload.upload_name} "

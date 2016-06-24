@@ -8,7 +8,14 @@ module Jack
       end
 
       def platform
-        CreateYaml.new.data['Platform'] || latest_docker_platform
+        # TODO: change so that the gem default settins has nil for platform
+        # but need to provide a deprecation warning first.
+        # Right now it will never hit the lastest_docker_platform logic
+        settings.create['platform'] || latest_docker_platform
+      end
+
+      def settings
+        @settings ||= Settings.new(@root)
       end
 
       def app_name
@@ -16,7 +23,10 @@ module Jack
       end
 
       def latest_docker_platform
-        "64bit Amazon Linux 2015.03 v1.4.0 running Docker 1.6.0"
+        solution_stacks.grep(/Docker/).
+                        reject {|x| x =~ /Preconfigured/}.
+                        reject {|x| x =~ /Multi-container/}.
+                        sort.last
       end
    
       def solution_stacks

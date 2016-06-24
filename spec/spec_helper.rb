@@ -5,9 +5,12 @@ CodeClimate::TestReporter.start
 
 require "pp"
 require 'ostruct'
+require 'pry'
  
 root = File.expand_path('../../', __FILE__)
 require "#{root}/lib/jack"
+
+require "#{root}/spec/support/fake_project"
 
 module Helpers
   def execute(cmd)
@@ -27,26 +30,19 @@ module Helpers
     }
   end
 
-  def fake_eb_config
-      data = <<-EOL
---- 
-global:
-  application_name: blah
-  default_platform: 64bit Amazon Linux 2014.09 v1.2.0 running Docker 1.3.3
-EOL
-      path = "#{@root}/.elasticbeanstalk/config.yml"
-      dir = File.dirname(path)
-      FileUtils.mkdir_p(dir) unless File.exist?(path)
-      File.write(path, data) unless File.exist?(path)
+  def fake_project
+    return @fake_project if @fake_project
+    @fake_project = FakeProject.new(@root)
+    @fake_project.create_eb_config
+    @fake_project
   end
-
 end
 
 RSpec.configure do |c|
   c.include Helpers
   c.before :all do
-    @root = "spec/fixtures/project"
-    fake_eb_config
+    @root = "spec/fixtures/project" # @root is being treated as a global with specs
+    fake_project
   end
   c.after :all do
     FileUtils.rm_f("#{@root}/.gitignore")

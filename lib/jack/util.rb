@@ -1,10 +1,10 @@
 module Jack
   module Util
     def do_cmd(command, options={})
-      UI.say "Running: #{command.colorize(:green)}" unless options[:silent]
+      UI.say "Running: #{command.colorize(:green)}"
       return command if options[:noop]
       out = `#{command}`
-      UI.say out unless options[:silent]
+      UI.say out
     end
 
     def app_name_convention(env_name)

@@ -5,7 +5,9 @@
 [![Code Climate](https://codeclimate.com/github/tongueroo/jack/badges/gpa.svg)](https://codeclimate.com/github/tongueroo/jack)
 [![Test Coverage](https://codeclimate.com/github/tongueroo/jack/badges/coverage.svg)](https://codeclimate.com/github/tongueroo/jack)
 
-Jack is a wrapper tool around the eb cli tool that can be use to manage AWS Elastic Beanstalk environments.  It allows you to create environments based on a saved template configuration file, located in the jack/cfg folder of your project.  It also provides a helpful config command to manage the template configuration. 
+Jack is a wrapper tool around the [aws eb cli3](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html) tool use to manage AWS Elastic Beanstalk, EB, environments.  It allows you to create environments based on a saved template configuration file, located in the jack/cfg folder of your project.  The jack/cfg files are the same files that are saved by the `eb config save`, the configs are moved into the jack directory
+
+It also provides a helpful config command to update the template configuration with a preview of what will be changed.  Environment config changes can be made live on the Elastic Beanstalk Console.  So `jack config upload` will first downlaod the current configuration and do a diff comparision on it allowing you to preview your changes before uploading them.
 
 For things that this tool does not do, it is recommended that you use use the underlying eb tool directly.  This tool has been tested with the 3.3.2 version of the eb command have that version installed.
 
@@ -88,7 +90,7 @@ $ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s2.cfg.yml te
 $ jack create -c myconfig stag-rails-app-s3 # creates environment using a config not based on environment naming convention
 </pre>
 
-If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  By default, the latest Docker solution stack is used for the platform option.  But you can override that by creating an ~/.jack/create.yml or jack/create.yml within the project folder.  Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged using the following precedence: project folder, user home, default that is packaged with this gem.  Most of the settings that `jack create` should used should be in the template configuration file though.
+If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  The default platform is "64bit Amazon Linux 2015.03 v1.4.0 running Docker 1.6.0".  But you can override that by creating an ~/.jack/settings.yml or jack/settings.yml within the project folder.  Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged using the following precedence: project folder, user home, default that is packaged with this gem.  Most of the settings that `jack create` should used should be in the template configuration file though.
 
 ### Downloading and Uploading Template Configurations
 

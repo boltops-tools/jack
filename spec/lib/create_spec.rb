@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Jack::Create do
   before(:all) do
+    Jack::UI.mute = true
     @create = Jack::Create.new(test_options)
   end
 
