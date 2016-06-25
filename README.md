@@ -75,7 +75,7 @@ application_name: api
 
 The example above means the EB application name will be `api` and the environment name will be `prod-api-web`.  The second word of the environment name is by convention the application name.
 
-This convention can be overriden easily via by creating a `~/.jack/settings.yml` or `jack/settings` within the project and defining your own regular expression.  The regexp is a ruby regexp.  Here is an example:
+This convention can be overriden easily via by creating a `~/.jack/settings.yml` or `jack/settings` within the project and defining your own regular expression with the `conventions.app_name_pattern` key.  The regexp is a ruby regexp and must have 1 capture group.  Here is an example:
 
 ```yaml
 create:
@@ -84,6 +84,14 @@ create:
 conventions:
   app_name_pattern: (\w+)-\w+-\w+
 ```
+
+In the example above, the capture group is the first word and this will result in:
+
+<pre>
+environment_name: api-web-prod
+application_name: api
+</pre>
+
 
 The default settings are located at [lib/jack/default/settings.yml](https://github.com/tongueroo/jack/blob/master/lib/jack/default/settings.yml).
 
