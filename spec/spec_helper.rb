@@ -20,13 +20,13 @@ module Helpers
     out
   end
 
-  def test_options
+  def test_options(env_name="stag-rails-app-s9")
     {
       noop: true,
       mute: true,
       force: true,
       root: @root,
-      env_name: "stag-rails-app-s9"
+      env_name: env_name
     }
   end
 

@@ -14,10 +14,6 @@ module Jack
         settings.create['platform'] || latest_docker_platform
       end
 
-      def settings
-        @settings ||= Settings.new(@root)
-      end
-
       def app_name
         @app_name
       end

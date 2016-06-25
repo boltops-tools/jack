@@ -15,11 +15,11 @@ describe Jack::Config do
       download.download
     end
 
-    it "should add jack/cfg/*.yml to gitignore" do
-      download.download
-      ignore = IO.read("#{@root}/.gitignore")
-      expect(ignore).to include("jack/cfg")
-    end
+    # it "should add jack/cfg/*.yml to gitignore" do
+    #   download.download
+    #   ignore = IO.read("#{@root}/.gitignore")
+    #   expect(ignore).to include("jack/cfg")
+    # end
 
   end
 end

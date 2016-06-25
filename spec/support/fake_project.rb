@@ -19,7 +19,11 @@ EOL
 create:
   keyname: default
   platform: "Fake Platform From Project Settings"
+conventions:
+  app_name_pattern: (\\w+)-\\w+-\\w+
 EOL
+    # really tricky but when writting yaml file like this the \ needs to be escaped
+    # when writing the yaml file normal, they do not need to be escaped
     create_file(settings_path, data)
   end
 

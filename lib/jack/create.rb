@@ -40,10 +40,6 @@ module Jack
       "eb create --sample --nohang #{flags} #{@cfg}#{cname}#{@env_name}"
     end
 
-    def settings
-      @settings ||= Settings.new(@root)
-    end
-
     def upload_cfg
       @upload = Config::Upload.new(@options)
       if @upload.local_cfg_exist?

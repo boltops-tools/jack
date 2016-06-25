@@ -15,9 +15,10 @@ describe Jack::EbConfig do
     ]
   end
 
-  let(:create) { 
-    Jack::EbConfig::Create.new(test_options)
-  }
+  let(:create) do
+    Jack::EbConfig::Create.new(test_options(env_name))
+  end
+  let(:env_name) { "stag-rails-app-s9" }
 
   describe "Create#sync" do
     context "default platform from default settings" do
@@ -32,6 +33,8 @@ describe Jack::EbConfig do
     end
 
     context "different platform from project settings" do
+      let(:env_name) { "rails-app-stag9" }
+
       before(:each) { fake_project.create_settings }
       after(:each)  { fake_project.remove_settings }
       it "have platform from project settings" do
