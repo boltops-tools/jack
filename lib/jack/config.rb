@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'thor'
 
 module Jack
   class Config < Thor

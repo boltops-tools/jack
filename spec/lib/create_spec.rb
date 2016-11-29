@@ -11,10 +11,10 @@ describe Jack::Create do
       command = @create.build_command
       # puts "command  = #{command }"
       expect(command).to include('eb create')
-      expect(command).to include('--cname stag-rails-app-s9')
+      expect(command).to include('--cname hi-web-stag-1')
       expect(command).to include('--keyname "default"')
-      expect(command).to include('--cfg stag-rails-app')
-      expect(command).to include('stag-rails-app-s9')
+      expect(command).to include('--cfg hi-web-stag-1')
+      expect(command).to include('hi-web-stag-1')
     end
   end
 end

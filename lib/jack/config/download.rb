@@ -2,7 +2,7 @@ require 'fileutils'
 require 'yaml'
 
 module Jack
-  module Config
+  class Config < Thor
     class Download < Transmit
       include Util
 
@@ -58,7 +58,7 @@ module Jack
       def do_copy_to_local_cfg
         return if @options[:noop]
         local_path = "#{@root}/#{@local_config_path}"
-        FileUtils.cp(@current_path, local_path) 
+        FileUtils.cp(@current_path, local_path)
         YamlFormatter.new.process(local_path)
       end
 

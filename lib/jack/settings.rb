@@ -33,7 +33,7 @@ module Jack
     end
 
     def app_name_pattern
-      Regexp.new(conventions["app_name_pattern"])
+      conventions["app_name_pattern"]
     end
 
     def conventions

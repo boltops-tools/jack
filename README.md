@@ -147,7 +147,7 @@ $ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s2.cfg.yml co
 $ jack create -c myconfig stag-rails-app-s3 # creates environment using jack/cfg/myconfig.cfg.yml
 </pre>
 
-If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  The default platform is "64bit Amazon Linux 2015.03 v1.4.0 running Docker 1.6.0".  But you can override that by creating an `~/.jack/settings.yml` or `jack/settings.yml` within the project folder and setting the `create.platform` key.
+If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  The default platform is "64bit Amazon Linux 2016.09 v2.2.0 running Docker 1.11.2".  But you can override that by creating an `~/.jack/settings.yml` or `jack/settings.yml` within the project folder and setting the `create.platform` key.
 
 Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged and combined together in following order: project folder, user home, [default](lib/jack/default/settings.yml) that is packaged with this gem.
 

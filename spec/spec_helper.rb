@@ -6,7 +6,7 @@ CodeClimate::TestReporter.start
 require "pp"
 require 'ostruct'
 require 'pry'
- 
+
 root = File.expand_path('../../', __FILE__)
 require "#{root}/lib/jack"
 
@@ -20,7 +20,7 @@ module Helpers
     out
   end
 
-  def test_options(env_name="stag-rails-app-s9")
+  def test_options(env_name="hi-web-stag-1")
     {
       noop: true,
       mute: true,

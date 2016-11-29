@@ -2,7 +2,7 @@ require 'fileutils'
 require 'yaml'
 
 module Jack
-  module Config
+  class Config < Thor
     class Transmit
       include Util
 

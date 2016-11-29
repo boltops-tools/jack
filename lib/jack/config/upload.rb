@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Jack
-  module Config
+  class Config < Thor
     class Upload < Transmit
       include Util
 
@@ -21,7 +21,7 @@ module Jack
         compare
         if confirm
           upload
-          update_env 
+          update_env
         end
       end
 
@@ -40,9 +40,9 @@ module Jack
       def confirm
         UI.say("Are you sure you want to update the environment with your the new config #{@config_path}?".colorize(:yellow))
         UI.say(<<-EOL)
-If the difference is not what you expected, you should say no.  
-A blank newline indicates that there was no difference.  
-If you want to download the config from the environment and 
+If the difference is not what you expected, you should say no.
+A blank newline indicates that there was no difference.
+If you want to download the config from the environment and
 overwrite your #{@local_config_path} instead, you can use this command:
 $ jack config download #{@env_name}
 $ jack config help download # for more info

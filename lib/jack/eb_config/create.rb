@@ -24,7 +24,7 @@ module Jack
                         reject {|x| x =~ /Multi-container/}.
                         sort.last
       end
-   
+
       def solution_stacks
         eb.list_available_solution_stacks.solution_stacks
       end

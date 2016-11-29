@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Jack::CLI do
   before(:all) do
-    @args = "stag-rails-app-s9 --root spec/fixtures/project --noop --force"
+    @args = "hi-web-stag-1 --root spec/fixtures/project --noop --force"
     FileUtils.rm_rf("spec/fixtures/project/.elasticbeanstalk")
   end
 
@@ -11,10 +11,9 @@ describe Jack::CLI do
       out = execute("bin/jack create #{@args}")
       # puts out
       expect(out).to include('eb create')
-      expect(out).to include('--cname stag-rails-app-s9')
+      expect(out).to include('--cname hi-web-stag-1')
       expect(out).to include('--keyname "default"')
-      expect(out).to include('--cfg stag-rails-app')
-      expect(out).to include('stag-rails-app-s9')
+      expect(out).to include('hi-web-stag-1')
     end
 
     it "should upload and apply config to environment" do

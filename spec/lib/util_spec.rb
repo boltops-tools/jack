@@ -18,7 +18,7 @@ describe Jack::Util do
 
   describe "util" do
     it "app_name_convention default" do
-      app_name = util.app_name_convention("prod-rails-web-s1")
+      app_name = util.app_name_convention("rails-web-prod-1")
       expect(app_name).to eq "rails"
     end
 
