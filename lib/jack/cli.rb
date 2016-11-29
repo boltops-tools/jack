@@ -4,7 +4,7 @@ require 'jack/version_checker'
 Jack::VersionChecker.new.run unless ENV['TEST']
 
 module Jack
-  class ConfigCLI < Thor
+  class Config < Thor
     desc "upload ENV_NAME", "upload and apply jack config changes to EB environment"
     long_desc Jack::CLI::Help.upload
     option :force, aliases: :f, type: :boolean, desc: "skip prompt"
@@ -50,6 +50,6 @@ module Jack
 
     desc "config ACTION ENV_NAME", "manage environment config"
     long_desc Help.config
-    subcommand "config", ConfigCLI
+    subcommand "config", Config
   end
 end

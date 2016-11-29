@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Jack
-  module Config
+  class Config < Thor
     autoload :Base, 'jack/config/base'
     autoload :Diff, 'jack/config/diff'
     autoload :Download, 'jack/config/download'
