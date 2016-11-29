@@ -2,4 +2,4 @@ create:
   keyname: default
   platform: "64bit Amazon Linux 2015.03 v1.4.0 running Docker 1.6.0"
 conventions:
-  app_name_pattern: \w+-(\w+)-\w+
+  app_name_pattern: !ruby/regexp /(\w+)-\w+-\w+/
