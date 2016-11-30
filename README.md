@@ -96,60 +96,48 @@ The default setting is located at [lib/jack/default/settings.yml](https://github
 
 You can also override the application name convention from the cli with the `--app` flag.  Examples are provided below.
 
-### Overview
-
-You can download a starting baseline jack cfg and use it as template from one of your existing EB environments.
-
-<pre>
-$ jack config download [ENVIRONMENT_NAME]
-</pre>
-
-The path of config that is saved is based on the environment name.
-
-<pre>
-$ jack config download hi-web-prod-1
-Downloading config file...
-Running: eb config save --cfg current-2015-03-03_18-40-34 hi-web-prod-1
-
-Configuration saved at: /Users/tung/src/rails/.elasticbeanstalk/saved_configs/current-2015-03-03_18-40-34.cfg.yml
-Writing to local config file: jack/cfg/hi-web-prod-1.cfg.yml
-Cleaning up eb remote config and local files
-Config downloaded to jack/cfg/stag-rails-app.cfg.yml
-$
-</pre>
-
-Results in a saved jack/cfg/hi-web-prod-1.cfg.yml template configuration file.  This saved path is overridable with the `-c` flag.
-
-<pre>
-$ jack config download -c myconfig hi-web-prod-1
-</pre>
-
-Results in a saved `jack/cfg/myconfig.cfg.yml`.
-
-#### Configuration Templates
-
-Configuration templates hold all the options and settings that we can set for an EB environment.  Elastic Beanstalk surfaces a portion of settings available from the underlying AWS Resources.  These settings include ELB behavior, VPC, LaunchConfiguration, Autoscaling settings, hard drive size, environment variables, etc.
-
-* [Here](https://gist.github.com/tongueroo/acc421c5ec998f238b4b) is an example of all the settings available.
-* [Here](https://gist.github.com/tongueroo/f22bbae7864ecec41ff3) is an example of what you would tyically see when you download the initial saved configuration.
-
 ### Creating Environments
 
-The purpose of the jack/cfg configs is allow us to be able to create environments with a codified configuration file that can be versioned controlled.
+If you do not yet have EB environment simply create an EB environment with jack and then you can download the initial EB config file it afterwards. To create a EB environment using jack without an initial config file.
 
-<pre>
-$ jack create hi-web-prod-1 # uses the jack/cfg/hi-web-prod-1.cfg.yml config
-$ jack create stag-rails-app-s2 # uses the jack/cfg/stag-rails-app-s2.cfg.yml config
-$ jack create -c myconfig stag-rails-app-s3 # creates environment using jack/cfg/myconfig.cfg.yml
-</pre>
+```bash
+$ git clone https://github.com/tongueroo/sinatra
+$ cd sinatra
+$ jack create hi-web-stag-1
+```
 
-If the project is brand new and has never had `eb init` ran on it before.  For example, a project that has just been git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  The default platform is "64bit Amazon Linux 2016.09 v2.2.0 running Docker 1.11.2".  But you can override that by creating an `~/.jack/settings.yml` or `jack/settings.yml` within the project folder and setting the `create.platform` key.
+The big benefit of using jack though is the ability to create EB environments based on previously saved configuration files.  So now you can download the configuration file from the newly created hi-web-stag-1 environment and version control them.
 
-Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged and combined together in following order: project folder, user home, [default](lib/jack/default/settings.yml) that is packaged with this gem.
+```bash
+$ jack config download hi-web-stag-1
+```
 
-### Downloading and Uploading Template Configurations
+This above saves the configuration file at `jack/cfg/hi-web-stag-1.cfg.yml`.  Here is an [example](https://gist.github.com/tongueroo/5791a4575a71cb664d48e4e8b29791b3) of what the config file.
 
-#### Download
+If you would like to save the config file under a different path, you can use the `-c` option.
+
+```bash
+$ jack config download hi-web-stag-1 -c my-config
+```
+
+This saves the config file to `jack/cfg/my-config.cfg.yml` looks like.
+
+You can then create different environments using any of the saved config files.
+
+```bash
+$ jack create -c my-config hi-web-stag-2 # creates environment using jack/cfg/myconfig.cfg.yml
+```
+
+If the project is brand new and has never had `eb init` ran on it before like a project that has been newly git cloned.  Then calling any of the jack commands will automatically call `eb init` in the project.  `eb init` requires the platform flag in order to avoid prompting.  The default platform is "64bit Amazon Linux 2016.09 v2.2.0 running Docker 1.11.2".  But you can override that by creating an `~/.jack/settings.yml` or `jack/settings.yml` within the project folder and setting the `create.platform` key.
+
+Here's an [example](https://gist.github.com/tongueroo/086e3c11c4d00d5c39b6). The options from each file is merged and combined together in following order: project folder, user home, [default](lib/jack/default/settings.yml) that is packaged with this gem.  So the project `jack/settings.yml` options have higher precedence than `~/.jack/settings.yml`.
+
+
+### More Configuration Examples
+
+Configuration templates hold all the options and settings that we can set for an EB environment.  Elastic Beanstalk surfaces a portion of settings available from the underlying AWS Resources.  These settings include ELB behavior, VPC, LaunchConfiguration, Autoscaling settings, hard drive size, environment variables, etc.  Here is an [example](https://gist.github.com/tongueroo/5791a4575a71cb664d48e4e8b29791b3).
+
+#### Download Config
 
 To download a template configuration.
 
@@ -161,7 +149,7 @@ $ jack config download hi-web-prod-1 --app customappname
 
 This will save the config to jack/cfg/hi-web-prod-1.cfg.yml.
 
-#### Upload
+#### Upload Config
 
 To upload a template configuration.
 
@@ -175,7 +163,7 @@ This will save the config to `jack/cfg/hi-web-prod-1.cfg.yml`.
 
 You will notice that the `eb config upload` command prompts you with the diff and asks for confirmation before uploading.  You can bypass the prompt with the force option.
 
-#### Diff - Comparing your local config to the live environment config
+#### Diff Config - Comparing your local config to the live environment config
 
 You can use the diff command directly to compare your local config to what configs the environment is actually using is useful.  To see the diff.
 

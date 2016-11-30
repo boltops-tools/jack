@@ -48,6 +48,11 @@ module Jack
       Jack::Create.new(options.merge(env_name: env_name)).run
     end
 
+    desc "version", "display jack version number"
+    def version
+      puts Jack::VERSION
+    end
+
     desc "config ACTION ENV_NAME", "manage environment config"
     long_desc Help.config
     subcommand "config", Config
