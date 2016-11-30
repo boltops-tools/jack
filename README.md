@@ -9,6 +9,8 @@ Jack is a wrapper tool around the [aws eb cli3](http://docs.aws.amazon.com/elast
 
 Jack provides a `jack config upload` command to update the EB environment.   Before uploading the new configuration to EB jack first downloads the current configuration and then does a diff on the changes that are about to be applied.  This gives a very helpful preview of exactly what you are intending to change.  This particularly helpful when changes are made through the EB GUI and are out of sync with what is stored in the `jack/cfg` files.  The demo video is available [here](https://www.youtube.com/watch?v=t7EcAOf8h1o).
 
+This blog post also provides a good introduction and some useful examples of what you can do with the jack tool: [Jack and the Elastic Beanstalk — Tool to Manage AWS Elastic Beanstalk Environments](https://medium.com/@tongueroo/jack-and-the-elastic-beanstalk-easily-manage-aws-environments-3ab496f08ad2#.o7w3x0yd9).
+
 For things that this tool does not cover like deploying code, it is recommended that you use use the underlying aws `eb` tool directly.  `eb deploy` provides a good deploy command already. This tool has been tested with `EB CLI 3.8.3 (Python 2.7.1)`.
 
 ## Use Cases
