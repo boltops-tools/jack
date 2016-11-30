@@ -11,7 +11,9 @@ module Jack
         data = YAML.load_file(file)
         data = strip_metadata_dates(data)
         dump = YAML.dump(data).gsub("!ruby/object:Hash", '')
-        dump = dump.split("\n")[1..-1].join("\n") + "\n" # strip first line
+        lines = dump.split("\n")
+        lines = lines.map { |l| l.rstrip } # strip trailing whitespace
+        dump = lines[1..-1].join("\n") + "\n" # strip first line
         outfile = "#{file}.sorted"
         File.open(outfile, 'w') { |f| f.write(dump) }
         FileUtils.mv(outfile, file)
