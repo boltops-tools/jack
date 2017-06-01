@@ -5,6 +5,7 @@ require "aws-sdk"
 require File.expand_path("../jack/ext/hash", __FILE__)
 
 module Jack
+  autoload :Command, 'jack/command'
   autoload :CLI, 'jack/cli'
   autoload :Create, 'jack/create'
   autoload :Settings, 'jack/settings'

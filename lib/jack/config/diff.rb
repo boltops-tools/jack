@@ -1,5 +1,5 @@
 module Jack
-  class Config < Thor
+  class Config < Command
     class Diff
       attr_reader :transmit
       def initialize(options={})

@@ -1,10 +1,11 @@
 require 'thor'
+require 'jack/command'
 require 'jack/cli/help'
 require 'jack/version_checker'
 Jack::VersionChecker.new.run unless ENV['TEST']
 
 module Jack
-  class Config < Thor
+  class Config < Command
     desc "upload ENV_NAME", "upload and apply jack config changes to EB environment"
     long_desc Jack::CLI::Help.upload
     option :force, aliases: :f, type: :boolean, desc: "skip prompt"
@@ -33,7 +34,7 @@ module Jack
     end
   end
 
-  class CLI < Thor
+  class CLI < Command
     class_option :verbose, type: :boolean
     class_option :mute, type: :boolean, desc: "mute all output, useful for specs"
     class_option :noop, type: :boolean, desc: "dont run any destructive commands"
