@@ -1,7 +1,7 @@
 require "yaml"
 
 module Jack
-  class Config < Thor
+  class Config < Command
     # Class does very specific formatting for the eb config files:
     #
     #   * Makes sure that the keys are sorted so we can compare them

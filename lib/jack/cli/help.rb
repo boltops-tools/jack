@@ -1,5 +1,5 @@
 module Jack
-  class CLI < Thor
+  class CLI < Command
     class Help
       class << self
         def convention

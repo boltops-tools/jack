@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Jack
-  class Config < Thor
+  class Config < Command
     class Upload < Transmit
       include Util
 

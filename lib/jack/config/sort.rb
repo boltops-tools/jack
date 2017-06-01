@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Jack
-  class Config < Thor
+  class Config < Command
     class Sort < Transmit # for the local_config_path method
       include Util
 

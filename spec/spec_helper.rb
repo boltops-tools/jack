@@ -1,8 +1,5 @@
 ENV['TEST'] = '1'
 
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-
 require "pp"
 require 'ostruct'
 require 'pry'
