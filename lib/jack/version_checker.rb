@@ -4,7 +4,7 @@ module Jack
     include Util
 
     def run
-      leave(not_installed) unless system("type #{eb_bin} > /dev/null 2>&1")
+      leave(not_installed) if eb_bin == ""
       leave(version_too_low) unless check
     end
 
