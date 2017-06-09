@@ -17,8 +17,6 @@ module Jack
     end
 
     def get_version
-      command = "#{eb_bin} --version"
-      puts "command: #{command}"
       `#{eb_bin} --version`
     end
 
