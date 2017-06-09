@@ -15,7 +15,7 @@ module Jack::Util
 
   def sh(command, options={})
     Jack::UI.say "=> #{command.colorize(:green)}"
-    return command if options[:noop]
+    return command if @options[:noop]
 
     if options[:backtick]
       out = `#{command}`

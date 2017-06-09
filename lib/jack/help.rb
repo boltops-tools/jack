@@ -17,6 +17,16 @@ $ jack create -a myapp -c myconfig hi-web-stag-1
 EOL
       end
 
+      def deploy
+<<-EOL
+Deploy code to the Elastic Beanstalk environment.
+
+Example:
+
+$ jack deploy hi-web-stag-1
+EOL
+      end
+
       def terminate
 <<-EOL
 Deletes Elastic Beanstalk environment.

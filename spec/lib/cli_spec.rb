@@ -40,7 +40,13 @@ describe Jack::CLI do
       expect(out).to include("Reformatted the local config")
     end
 
-    it "should terminate enviornment" do
+    it "should deploy environment" do
+      out = execute("bin/jack deploy #{@args}")
+      # puts out
+      expect(out).to include("eb deploy")
+    end
+
+    it "should terminate environment" do
       out = execute("bin/jack terminate #{@args}")
       # puts out
       expect(out).to include("Whew that was close")

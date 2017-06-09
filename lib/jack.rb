@@ -9,6 +9,7 @@ module Jack
   autoload :Help, 'jack/help'
   autoload :CLI, 'jack/cli'
   autoload :Create, 'jack/create'
+  autoload :Deploy, 'jack/deploy'
   autoload :Terminate, 'jack/terminate'
   autoload :Settings, 'jack/settings'
   autoload :EbConfig, 'jack/eb_config'
