@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.1.1]
+- fix verison checker when eb is not installed
+
 ## [1.1.0]
 - add jack terminate
 - refactoring: https://github.com/tongueroo/jack/pull/6
