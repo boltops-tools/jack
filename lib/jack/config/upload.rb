@@ -18,11 +18,29 @@ module Jack
           UI.say "#{local_config_path} does not exist, nothing to upload"
           exit 0
         end
-        compare
-        if confirm
-          upload
-          update_env
+        difference = compare
+        if difference
+          if confirm(confirmation_message)
+            upload
+            update_env
+          else
+            UI.say("Whew, that was close. EB Configuration was not updated.")
+          end
+        else
+          UI.say("There was no difference detected from your #{@local_config_path} and what exists on the EB environment")
         end
+      end
+
+      def confirmation_message
+        message = "Are you sure you want to update the environment with your the new config #{@local_config_path}?\n".colorize(:yellow)
+        message += <<-EOL
+If the difference is not what you expected, you should say no.
+If you want to download the config from the environment and get #{@local_config_path}
+back in sync, you can use this command:
+  $ jack config download #{@env_name}
+  $ jack config download -h # for more info
+EOL
+        message
       end
 
       def compare
@@ -35,26 +53,6 @@ module Jack
         cp_to_save_configs
         upload_to_eb
         clean_up
-      end
-
-      def confirm
-        UI.say("Are you sure you want to update the environment with your the new config #{@config_path}?".colorize(:yellow))
-        UI.say(<<-EOL)
-If the difference is not what you expected, you should say no.
-A blank newline indicates that there was no difference.
-If you want to download the config from the environment and
-overwrite your #{@local_config_path} instead, you can use this command:
-$ jack config download #{@env_name}
-$ jack config help download # for more info
-EOL
-        print "yes/no? [no] " unless @options[:mute] || @options[:force]
-        answer = get_answer
-        answer =~ /^y/
-      end
-
-      def get_answer
-        return 'y' if @options[:force]
-        $stdin.gets
       end
 
       def update_env
@@ -80,7 +78,7 @@ EOL
 
       # for specs
       def eb_config_put
-        do_cmd("eb config put #{upload_name}", @options)
+        sh("#{eb_bin} config put#{eb_base_flags} #{upload_name}", @options)
       end
 
       def clean_up

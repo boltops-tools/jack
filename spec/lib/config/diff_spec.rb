@@ -8,8 +8,8 @@ describe Jack::Config do
   let(:diff) { Jack::Config::Diff.new(test_options) }
 
   describe "diff" do
-    it "diff do_diff" do
-      expect(diff).to receive(:do_diff)
+    it "diff compute_diff" do
+      expect(diff).to receive(:compute_diff)
       diff.run
     end
 

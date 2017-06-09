@@ -13,11 +13,15 @@ module Jack
       def app_name
         env.application_name
       end
-   
+
       def env
         return @env if @env
         envs = describe_environments
         @env = envs[:environments].first
+        unless @env
+          abort("ERROR: Environment #{@env_name} not found.  Are you sure it exists?".colorize(:red))
+        end
+        @env
       end
 
       # useful for specs

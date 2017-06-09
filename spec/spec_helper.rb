@@ -1,4 +1,6 @@
 ENV['TEST'] = '1'
+# Ensures aws api never called. Fixture home folder does not contain ~/.aws/credentails
+ENV['HOME'] = "spec/fixtures/home"
 
 require "pp"
 require 'ostruct'
@@ -10,6 +12,7 @@ require "#{root}/lib/jack"
 require "#{root}/spec/support/fake_project"
 
 module Helpers
+  # TEST=1 DEBUG=1 bin/jack config diff hi-web-stag-1 --root spec/fixtures/project --noop --sure
   def execute(cmd)
     puts "Running: #{cmd}" if ENV['DEBUG']
     out = `#{cmd}`
@@ -21,7 +24,7 @@ module Helpers
     {
       noop: true,
       mute: true,
-      force: true,
+      sure: true,
       root: @root,
       env_name: env_name
     }

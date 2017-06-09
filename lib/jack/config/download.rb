@@ -34,7 +34,7 @@ module Jack
           ignores = IO.read(path)
           has_ignore = ignores.include?("jack/cfg")
         end
-        do_cmd("echo 'jack/cfg/*.yml' >> #{path}") unless has_ignore
+        sh("echo 'jack/cfg/*.yml' >> #{path}") unless has_ignore
       end
 
       def get_current_cfg
@@ -44,7 +44,7 @@ module Jack
 
       # for specs
       def eb_config_save
-        do_cmd("eb config save --cfg #{current_name} #{@env_name}", @options)
+        sh("#{eb_bin} config save#{eb_base_flags} --cfg #{current_name} #{@env_name}", @options)
       end
 
       def copy_to_local_cfg

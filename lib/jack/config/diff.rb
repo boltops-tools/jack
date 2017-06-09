@@ -11,19 +11,24 @@ module Jack
 
       def run
         @download.get_current_cfg
-        do_diff(@download.current_path, @download.local_config_path)
+        difference = compute_diff(@download.current_path, @download.local_config_path)
         cleanup_files
+        difference
       end
 
-      def do_diff(current, local)
-        UI.say "Comparing #{current} and #{local}"
+      def compute_diff(current, local)
+        # the diff command returns 0 when there is no difference and returns 1 when there is a difference
+        pretty_current_path = @download.current_path.sub(/.*\.elasticbeanstalk/,'.elasticbeanstalk')
+        command = "#{diff_command} #{pretty_current_path} #{@download.local_config_path}"
+        UI.say("=> #{command}")
+
         return if @options[:noop]
         sorter = YamlFormatter.new
         sorter.process(current)
         sorter.process(local)
-        # need to use system so that the diff shows up properly in the terminal
-        system(diff_command, @download.current_path, @download.local_config_path)
-        puts ""
+
+        no_difference = system(command)
+        !no_difference
       end
 
       def cleanup_files
