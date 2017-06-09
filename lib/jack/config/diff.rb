@@ -6,7 +6,7 @@ module Jack
         @options = options
         @root = options[:root] || '.'
         @env_name = options[:env_name]
-        @download = Jack::Config::Download.new(options)
+        @download = Jack::Config::Get.new(options)
       end
 
       def run

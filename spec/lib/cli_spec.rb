@@ -17,13 +17,13 @@ describe Jack::CLI do
     end
 
     it "should upload and apply config to environment" do
-      out = execute("bin/jack config upload #{@args}")
+      out = execute("bin/jack config apply #{@args}")
       # puts out
       expect(out).to include('eb config save')
     end
 
     it "should download config from environment" do
-      out = execute("bin/jack config download #{@args}")
+      out = execute("bin/jack config get #{@args}")
       # puts out
       expect(out).to include("Config downloaded")
     end

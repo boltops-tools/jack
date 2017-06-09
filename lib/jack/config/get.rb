@@ -3,7 +3,7 @@ require 'yaml'
 
 module Jack
   class Config < Command
-    class Download < Transmit
+    class Get < Transmit
       include Util
 
       attr_reader :current_path, :current_name

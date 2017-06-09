@@ -42,7 +42,7 @@ module Jack
     end
 
     def upload_cfg
-      @upload = Config::Upload.new(@options)
+      @upload = Config::Apply.new(@options)
       if @upload.local_cfg_exist?
         @upload.upload
         cfg = "--cfg #{@upload.upload_name} "

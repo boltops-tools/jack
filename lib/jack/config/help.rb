@@ -1,20 +1,20 @@
 class Jack::Config::Help
   class << self
-    def upload
+    def apply
 <<-EOL
-Uploads the specified template configuration in jack/cfg and applies it to the environment immediately.
+Apply the specified template configuration in jack/cfg to the Elastic Beanstalk environment.
 
 #{convention}
 
 Example:
 
-$ jack config upload hi-web-stag-1
+$ jack config apply hi-web-stag-1
 
-$ jack config upload myapp -c myconfig hi-web-stag-1
+$ jack config apply myapp -c myconfig hi-web-stag-1
 EOL
     end
 
-    def download
+    def get
 <<-EOL
 Downloads the environment's config to jack/cfg/[CONFIG_NAME].cfg.yml
 
@@ -22,9 +22,9 @@ Downloads the environment's config to jack/cfg/[CONFIG_NAME].cfg.yml
 
 Example:
 
-$ jack config download hi-web-stag-1
+$ jack config get hi-web-stag-1
 
-$ jack config download myapp -c myconfig hi-web-stag-1
+$ jack config get myapp -c myconfig hi-web-stag-1
 EOL
     end
 

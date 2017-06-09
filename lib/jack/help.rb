@@ -31,11 +31,11 @@ EOL
       # Leaving here in case we figure out a way to override this Thor behavior.
       def config
 <<-EOL
-Manage the environment's config.  Can use this to download the environment's config to jack/cfg folder or upload config in jack/cfg folder and apply it to the environment.
+Manage the environment's config.  Can use this to download the environment's config to jack/cfg folder or upload and apply config in jack/cfg folder to the environment.
 
 Example:
 
-$ jack config download hi-web-stag-1
+$ jack config get hi-web-stag-1
 
 For more info:
 
