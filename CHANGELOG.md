@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.2.0]
+- add jack deploy command
+- rename commands to config get and config apply
+
 ## [1.1.2]
 - remove debugging from version checker
 
