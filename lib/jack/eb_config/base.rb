@@ -21,7 +21,7 @@ module Jack
 
       def ensure_eb_init
         unless File.exist?(eb_config_path)
-          do_cmd(%Q|eb init -r us-east-1 -p "#{platform}" "#{app_name}"|, @options)
+          sh(%Q|#{eb_bin} init#{eb_base_flags} -p "#{platform}" "#{app_name}"|, @options)
         end
       end
 

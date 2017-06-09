@@ -161,7 +161,7 @@ $ jack config upload hi-web-prod-1 --app customappname
 
 This will save the config to `jack/cfg/hi-web-prod-1.cfg.yml`.
 
-You will notice that the `eb config upload` command prompts you with the diff and asks for confirmation before uploading.  You can bypass the prompt with the force option.
+You will notice that the `eb config upload` command prompts you with the diff and asks for confirmation before uploading.  You can bypass the prompt with the `--sure` option.
 
 #### Diff Config - Comparing your local config to the live environment config
 

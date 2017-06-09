@@ -26,7 +26,7 @@ describe Jack::VersionChecker do
 
     it "parse version" do
       version = checker.parse_version("EB CLI 3.2.0 (Python 2.7.6)")
-      expect(version).to eq [3,2,0]
+      expect(version).to eq "3.2.0"
     end
   end
 end

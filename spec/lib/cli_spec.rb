@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Jack::CLI do
   before(:all) do
-    @args = "hi-web-stag-1 --root spec/fixtures/project --noop --force"
+    @args = "hi-web-stag-1 --root spec/fixtures/project --noop --sure"
     FileUtils.rm_rf("spec/fixtures/project/.elasticbeanstalk")
   end
 
@@ -19,7 +19,7 @@ describe Jack::CLI do
     it "should upload and apply config to environment" do
       out = execute("bin/jack config upload #{@args}")
       # puts out
-      expect(out).to include('eb config put')
+      expect(out).to include('eb config save')
     end
 
     it "should download config from environment" do
@@ -31,13 +31,19 @@ describe Jack::CLI do
     it "should diff local config from eb environment config" do
       out = execute("bin/jack config diff #{@args}")
       # puts out
-      expect(out).to include("Comparing")
+      expect(out).to include("diff")
     end
 
     it "should reformat the local config to a sorted yaml format" do
       out = execute("bin/jack config sort #{@args}")
       # puts out
       expect(out).to include("Reformatted the local config")
+    end
+
+    it "should terminate enviornment" do
+      out = execute("bin/jack terminate #{@args}")
+      # puts out
+      expect(out).to include("Whew that was close")
     end
   end
 end

@@ -17,6 +17,8 @@ describe Jack::Config::Upload do
     end
 
     it "upload flow" do
+      allow(upload).to receive(:compare).and_return(true)
+
       expect(upload).to receive(:compare)
       expect(upload).to receive(:upload)
       expect(upload).to receive(:update_env)

@@ -3,6 +3,7 @@ require 'thor'
 
 module Jack
   class Config < Command
+    autoload :Help, 'jack/config/help'
     autoload :Base, 'jack/config/base'
     autoload :Diff, 'jack/config/diff'
     autoload :Download, 'jack/config/download'
