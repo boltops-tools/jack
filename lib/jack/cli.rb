@@ -5,23 +5,23 @@ Jack::VersionChecker.new.run unless ENV['TEST']
 
 module Jack
   class Config < Command
-    desc "upload ENV_NAME", "upload and apply jack config changes to EB environment"
-    long_desc Help.upload
+    desc "apply ENV_NAME", "apply jack config changes to EB environment"
+    long_desc Help.apply
     option :sure, aliases: :f, type: :boolean, desc: "skip prompt"
-    def upload(env_name)
-      Upload.new(options.merge(env_name: env_name)).run
+    def apply(env_name)
+      Apply.new(options.merge(env_name: env_name)).run
     end
 
-    desc "download ENV_NAME", "downloads environment config to jack/cfg folder"
-    long_desc Help.download
-    option :dirty, type: :boolean, desc: "leave the remote eb config and download config behind"
-    def download(env_name)
-      Download.new(options.merge(env_name: env_name)).run
+    desc "get ENV_NAME", "downloads environment config to jack/cfg folder"
+    long_desc Help.get
+    option :dirty, type: :boolean, desc: "leave the remote eb config and downloaded config behind"
+    def get(env_name)
+      Get.new(options.merge(env_name: env_name)).run
     end
 
     desc "diff ENV_NAME", "diff jack config vs environment config"
     long_desc Help.diff
-    option :dirty, type: :boolean, desc: "leave the remote eb config and download config behind"
+    option :dirty, type: :boolean, desc: "leave the remote eb config and downloaded config behind"
     def diff(env_name)
       Diff.new(options.merge(env_name: env_name)).run
     end
@@ -46,6 +46,13 @@ module Jack
     long_desc Help.create
     def create(env_name)
       Create.new(options.merge(env_name: env_name)).run
+    end
+
+    desc "deploy ENV_NAME", "deploy to EB environment"
+    long_desc Help.deploy
+    option :eb_options, type: :string, desc: "Passthrough options to underlying called eb command"
+    def deploy(env_name)
+      Deploy.new(options.merge(env_name: env_name)).run
     end
 
     desc "terminate ENV_NAME", "deletes EB environment"
