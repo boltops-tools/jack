@@ -17,25 +17,25 @@ describe Jack::CLI do
     end
 
     it "should upload and apply config to environment" do
-      out = execute("bin/jack config apply #{@args}")
+      out = execute("bin/jack apply #{@args}")
       # puts out
       expect(out).to include('eb config save')
     end
 
     it "should download config from environment" do
-      out = execute("bin/jack config get #{@args}")
+      out = execute("bin/jack get #{@args}")
       # puts out
       expect(out).to include("Config downloaded")
     end
 
     it "should diff local config from eb environment config" do
-      out = execute("bin/jack config diff #{@args}")
+      out = execute("bin/jack diff #{@args}")
       # puts out
       expect(out).to include("diff")
     end
 
     it "should reformat the local config to a sorted yaml format" do
-      out = execute("bin/jack config sort #{@args}")
+      out = execute("bin/jack sort #{@args}")
       # puts out
       expect(out).to include("Reformatted the local config")
     end
