@@ -1,5 +1,5 @@
 ---
-title: jack config apply
+title: jack apply
 ---
 
 #### Applying Changes
@@ -14,7 +14,7 @@ Now let's make some changes to the Elastic Beanstalk environment. Let's change t
 And then update it with the following command:
 
 ```sh
-jack config apply hi-web-stag
+jack apply hi-web-stag
 ```
 
 You should see similiar output:
@@ -30,7 +30,7 @@ Let's demonstrate one of the good reasons for using jack to manage your Elastic 
 Now we decide to re-enable RollingUpdateEnabled to `true`.  We'll apply this change again:
 
 ```sh
-jack config apply hi-web-stag
+jack apply hi-web-stag
 ```
 
 Notice that this time when jack compares the configuration you see the changes that your other team member has made.

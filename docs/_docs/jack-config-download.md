@@ -1,11 +1,11 @@
 ---
-title: jack config get
+title: jack get
 ---
 
 Run the following command to download the configuration from the Elastic Beanstalk environment:
 
 ```sh
-jack config get hi-web-stag
+jack get hi-web-stag
 ```
 
 You should something similar to this:

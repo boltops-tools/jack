@@ -4,20 +4,20 @@ title: jack diff
 
 #### Preview Changes
 
-You can preview the changes without applying the changes with `jack config diff`.
+You can preview the changes without applying the changes with `jack diff`.
 
 ```sh
-jack config diff hi-web-stag
+jack diff hi-web-stag
 ```
 
 You should see something similar to this:
 
 <img src="/img/tutorials/jack-config-diff.png" class="doc-photo" />
 
-By default, `jack config diff` cleans up after itself and removes the originally downloaded `.elasticbeanstalk/saved_configs`.  If you would like to keep that file around for further inspection, use the `--dirty` flag.
+By default, `jack diff` cleans up after itself and removes the originally downloaded `.elasticbeanstalk/saved_configs`.  If you would like to keep that file around for further inspection, use the `--dirty` flag.
 
 ```sh
-jack config diff hi-web-stag --dirty
+jack diff hi-web-stag --dirty
 ```
 
 <a class="btn btn-basic" href="{% link _docs/jack-config-upload.md %}">Back</a>
