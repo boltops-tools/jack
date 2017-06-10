@@ -50,7 +50,6 @@ module Jack
 
     desc "deploy ENV_NAME", "deploy to EB environment"
     long_desc Help.deploy
-    option :eb_options, type: :string, desc: "Passthrough options to underlying called eb command"
     def deploy(env_name)
       Deploy.new(options.merge(env_name: env_name)).run
     end

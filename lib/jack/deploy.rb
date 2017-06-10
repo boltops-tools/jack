@@ -25,7 +25,7 @@ module Jack
     end
 
     def deploy
-      # eb_options are passed through to the underlying eb deploy command
+      # EB_OPTIONS are passed through to the underlying eb deploy command
       #
       # optional arguments:
       #   -h, --help            show this help message and exit
@@ -52,8 +52,9 @@ module Jack
       #   --source SOURCE       source of code to deploy directly; example
       #                         source_location/repo/branch
       #   -p, --process         enable preprocessing of the application version
-      command = "#{eb_bin} deploy#{eb_base_flags} #{@env_name} #{@options[:eb_options]}"
-      sh(command)
+      command = "#{eb_bin} deploy#{eb_base_flags} #{@env_name} #{ENV['EB_OPTIONS']}"
+      puts "command #{command.inspect}"
+      # sh(command)
     end
   end
 end
