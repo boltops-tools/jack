@@ -1,16 +1,16 @@
 ---
-title: jack config get
+title: jack get
 ---
 
 Run the following command to download the configuration from the Elastic Beanstalk environment:
 
 ```sh
-jack config get hi-web-stag
+jack get hi-web-stag
 ```
 
 You should something similar to this:
 
-<img src="/img/tutorials/jack-config-download.png" class="doc-photo" />
+<img src="/img/tutorials/jack-get.png" class="doc-photo" />
 
 Let's take a look the contents of the downloaded file:
 
@@ -48,4 +48,4 @@ Platform:
 As you can see this file contains everything there is to know about the Elastic Beanstalk environment.  With this file you can completely rebuild the environment and even "clone" it across Elastic Beanstalk applications.
 
 <a class="btn btn-basic" href="{% link _docs/jack-create.md %}">Back</a>
-<a class="btn btn-primary" href="{% link _docs/jack-config-upload.md %}">Next Step</a>
+<a class="btn btn-primary" href="{% link _docs/jack-apply.md %}">Next Step</a>

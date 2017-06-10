@@ -57,10 +57,16 @@ EOL
 
       def update_env
         UI.say("Updating environment #{@env_name} with template #{upload_name}")
-        eb.update_environment(
-          environment_name: @env_name,
-          template_name: upload_name
-        ) unless @options[:noop]
+        begin
+          eb.update_environment(
+            environment_name: @env_name,
+            template_name: upload_name
+          ) unless @options[:noop]
+        rescue Aws::ElasticBeanstalk::Errors::InvalidParameterValue => e
+          puts "ERROR: Unable to update the environment: #{@env_name}".colorize(:red)
+          puts e.message.colorize(:red)
+          exit 1
+        end
       end
 
       def local_cfg_exist?
