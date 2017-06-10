@@ -19,7 +19,7 @@ jack apply hi-web-stag
 
 You should see similiar output:
 
-<img src="/img/tutorials/jack-config-upload.png" class="doc-photo" />
+<img src="/img/tutorials/jack-apply.png" class="doc-photo" />
 
 #### Syncing Changes
 
@@ -35,7 +35,7 @@ jack apply hi-web-stag
 
 Notice that this time when jack compares the configuration you see the changes that your other team member has made.
 
-<img src="/img/tutorials/jack-config-upload-no.png" class="doc-photo" />
+<img src="/img/tutorials/jack-apply-no.png" class="doc-photo" />
 
 By allowing you to preview the changes and prompting for your confirmation, jack prevents you from accidentally overriding their change.  This saves later headaches and confusion when changes "suddenly" disappear.
 
@@ -50,5 +50,5 @@ jack upload apply hi-web-stag
 
 You are now set! Jack allows you codify the infrastructure code and then enables you to apply those changes safely.
 
-<a class="btn btn-basic" href="{% link _docs/jack-config-download.md %}">Back</a>
+<a class="btn btn-basic" href="{% link _docs/jack-get.md %}">Back</a>
 <a class="btn btn-primary" href="{% link _docs/jack-diff.md %}">Next Step</a>
