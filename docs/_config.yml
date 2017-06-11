@@ -1,7 +1,7 @@
 # Site settings
 title: Jack
 email: tongueroo@gmail.com
-url: https://jackandtheelasticbeanstalk.com
+url: http://jackandtheelasticbeanstalk.com
 description: "Manage your AWS Elastic Beanstalk Jack environments easily with Jack."
 keywords: "Jack, AWS Elastic Beanstalk, DevOps, Infrastructure, BoltOps, Tools, Producitivity, Documentation"
 skills: ""
