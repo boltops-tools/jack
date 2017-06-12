@@ -51,7 +51,7 @@ Platform:
 
 The configuration file provides everything that is required to rebuild the Elastic Beanstalk environment.
 
-Now that you now where the jack configurations are are located and what they look like.  Let use it!
+Now that you now where the jack configurations are located and what they look like.  Let use it!
 
 <a class="btn btn-basic" href="{% link _docs/install.md %}">Back</a>
 <a class="btn btn-primary" href="{% link _docs/tutorial.md %}">Next Step</a>
