@@ -10,6 +10,8 @@ If you want to quickly install jack without having to worry about jack's depende
 brew cask install boltopslabs/software/bolts
 ```
 
+The bolts installer will also automatically install the [aws cli](https://aws.amazon.com/documentation/cli/) and the [aws eb cli3](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html) dependencies for you.  You don't have to worry about it!
+
 For more information about the Bolts Toolbelt or to get an installer for another operating system visit: [https://boltops.com/toolbelt](https://boltops.com/toolbelt)
 
 ### Install with RubyGems
@@ -26,7 +28,9 @@ Or you can add jack to your Gemfile in your project if you are working with a ru
 gem "jack-eb"
 {% endhighlight %}
 
-You also need to install jack's additional dependencies: the aws cli and the aws eb cli.
+#### Additional Depedencies
+
+If you are installing jack via RubyGems, you will also need to install jack's additional dependencies: the [aws cli](https://aws.amazon.com/documentation/cli/) and the [aws eb cli3](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html).  If you have used the bolts installer then you do not have to worry about installing these additional dependencies.
 
 On a Mac OS system, you can use homebrew:
 
