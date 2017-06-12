@@ -2,7 +2,7 @@
 title: jack deploy
 ---
 
-So far we have been using an empty folder as our project to mainly demonstrate jack's abiliy to download and managed configuration files.  Jack can also deploy applications to the Elastic Beanstalk environments.  For this next step, we will deploy a small test sinatra app available on GitHub at [tongueroo/sinatra](https://github.com/tongueroo/sinatra).
+So far we have been using an empty folder as our project to mainly demonstrate jack's ability to download and manage configuration files.  Jack can also deploy application code to the Elastic Beanstalk environment.  For this next step, we will deploy a small test sinatra app available on GitHub at [tongueroo/sinatra](https://github.com/tongueroo/sinatra).
 
 Clone the project and cd into it:
 

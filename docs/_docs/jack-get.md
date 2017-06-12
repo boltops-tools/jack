@@ -8,7 +8,7 @@ Run the following command to download the configuration from the Elastic Beansta
 jack get hi-web-stag
 ```
 
-You should something similar to this:
+You should see something similar to this:
 
 <img src="/img/tutorials/jack-get.png" class="doc-photo" />
 

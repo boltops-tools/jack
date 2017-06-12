@@ -7,7 +7,7 @@ title: jack apply
 Now let's make some changes to the Elastic Beanstalk environment. Let's change the AutoScaling RollingUpdateEnabled from `true` to `false`.  Here is the line for that setting:
 
 ```yaml
-    RollingUpdateEnabled: true
+    RollingUpdateEnabled: false
 ```
 
 
@@ -43,9 +43,9 @@ By allowing you to preview the changes and prompting for your confirmation, jack
 You can now download the updated configuration first and then re-add your changes.
 
 ```
-jack download get hi-web-stag
+jack get hi-web-stag
 # add back in your changes to `jack/cfg/hi-web-stag.cfg.yml
-jack upload apply hi-web-stag
+jack apply hi-web-stag
 ```
 
 You are now set! Jack allows you codify the infrastructure code and then enables you to apply those changes safely.
