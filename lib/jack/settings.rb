@@ -16,7 +16,7 @@ module Jack
       default_file = File.expand_path("../default/settings.yml", __FILE__)
       default = YAML.load_file(default_file)
 
-      @settings_yaml = default.merge(project.merge(user))
+      @settings_yaml = default.merge(user.merge(project))
     end
 
     def home
