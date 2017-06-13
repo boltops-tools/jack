@@ -47,5 +47,7 @@ Platform:
 
 As you can see this file contains everything there is to know about the Elastic Beanstalk environment.  With this file you can completely rebuild the environment and even "clone" it across Elastic Beanstalk applications.
 
-<a class="btn btn-basic" href="{% link _docs/jack-create.md %}">Back</a>
-<a class="btn btn-primary" href="{% link _docs/jack-apply.md %}">Next Step</a>
+<a id="prev" class="btn btn-basic" href="{% link _docs/jack-create.md %}">Back</a>
+<a id="next" class="btn btn-primary" href="{% link _docs/jack-apply.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+

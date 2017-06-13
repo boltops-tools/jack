@@ -50,5 +50,7 @@ jack apply hi-web-stag
 
 You are now set! Jack allows you codify the infrastructure code and then enables you to apply those changes safely.
 
-<a class="btn btn-basic" href="{% link _docs/jack-get.md %}">Back</a>
-<a class="btn btn-primary" href="{% link _docs/jack-diff.md %}">Next Step</a>
+<a id="prev" class="btn btn-basic" href="{% link _docs/jack-get.md %}">Back</a>
+<a id="next" class="btn btn-primary" href="{% link _docs/jack-diff.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+

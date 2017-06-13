@@ -48,5 +48,7 @@ On other operating systems, follow Amazon Web Services' official installation gu
 * [Install the Elastic Beanstalk Command Line Interface (EB CLI)](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
 
 
-<a class="btn btn-basic" href="/quick-start/">Back</a>
-<a class="btn btn-primary" href="{% link _docs/structure.md %}">Next Step</a>
+<a id="prev" class="btn btn-basic" href="{% link docs.md %}">Back</a>
+<a id="next" class="btn btn-primary" href="{% link _docs/structure.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+

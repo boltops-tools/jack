@@ -18,4 +18,6 @@ Congratulations!  You have successfully created a Elastic Beanstalk environment,
 
 Learn more in the next sections.
 
-<a class="btn btn-primary" href="{% link docs.md %}">Next Step</a>
+<a id="next" class="btn btn-primary" href="{% link docs.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+

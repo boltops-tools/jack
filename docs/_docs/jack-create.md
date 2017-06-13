@@ -16,5 +16,7 @@ After a few minutes you should see an environment fully spun up in Elastic Beans
 
 In the next step, you'll download the configuration from the newly created environment.
 
-<a class="btn btn-basic" href="{% link _docs/tutorial.md %}">Back</a>
-<a class="btn btn-primary" href="{% link _docs/jack-get.md %}">Next Step</a>
+<a id="prev" class="btn btn-basic" href="{% link _docs/tutorial.md %}">Back</a>
+<a id="next" class="btn btn-primary" href="{% link _docs/jack-get.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+

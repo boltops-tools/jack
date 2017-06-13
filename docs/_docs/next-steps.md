@@ -12,5 +12,7 @@ From here, there are a few resources that can help you continue along:
 
 Everyone can contribute to make jack better, including the documentation. These docs in the jack repo located [docs folder](https://github.com/tongueroo/jack/tree/master/docs). Please fork the project and open a pull request!  We love your pull requests. Contributions are encouraged and welcomed!
 
-<a class="btn btn-basic" href="{% link _docs/jack-terminate.md %}">Back</a>
-<a class="btn btn-primary" href="{% link articles.md %}">Next Step</a>
+<a id="prev" class="btn btn-basic" href="{% link _docs/jack-terminate.md %}">Back</a>
+<a id="next" class="btn btn-primary" href="{% link articles.md %}">Next Step</a>
+<p class="keyboard-tip">Pro tip: Use the <- and -> arrow keys to move back and forward.</p>
+
