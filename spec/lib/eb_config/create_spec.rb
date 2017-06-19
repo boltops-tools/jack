@@ -28,7 +28,7 @@ describe Jack::EbConfig do
         data = YAML.load_file(create.eb_config_path)
         global = data['global']
         expect(global['application_name']).to eq "hi"
-        expect(global['default_platform']).to eq "64bit Amazon Linux 2016.09 v2.2.0 running Docker 1.11.2"
+        expect(global['default_platform']).to include("64bit Amazon Linux")
       end
     end
 

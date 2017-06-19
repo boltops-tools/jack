@@ -20,8 +20,8 @@ describe Jack::Settings do
 
     context "no custom project settings" do
       it "flags uses defaults provided gem" do
-        project_flags = '--keyname "default" --platform "64bit Amazon Linux 2016.09 v2.2.0 running Docker 1.11.2"'
-        expect(settings.create_flags).to eq(project_flags)
+        project_flags = '--keyname "default" --platform "64bit Amazon Linux'
+        expect(settings.create_flags).to include(project_flags)
       end
     end
   end
