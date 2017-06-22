@@ -39,13 +39,18 @@ Notice that this time when jack compares the configuration you see the changes t
 
 By allowing you to preview the changes and prompting for your confirmation, jack prevents you from accidentally overriding their change.  This saves later headaches and confusion when changes "suddenly" disappear.
 
-
 You can now download the updated configuration first and then re-add your changes.
 
 ```
 jack get hi-web-stag
 # add back in your changes to `jack/cfg/hi-web-stag.cfg.yml
 jack apply hi-web-stag
+```
+
+If you would like to use a different app name you can use the `--app` option.
+
+```sh
+jack apply hi-web-stag --app myapp
 ```
 
 You are now set! Jack allows you codify the infrastructure code and then enables you to apply those changes safely.
