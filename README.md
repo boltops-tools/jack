@@ -4,6 +4,9 @@
 [![CircleCI](https://circleci.com/gh/tongueroo/jack.svg?style=svg)](https://circleci.com/gh/tongueroo/jack)
 [![Code Climate](https://codeclimate.com/github/tongueroo/jack/badges/gpa.svg)](https://codeclimate.com/github/tongueroo/jack)
 [![Test Coverage](https://codeclimate.com/github/tongueroo/jack/badges/coverage.svg)](https://codeclimate.com/github/tongueroo/jack)
+[![Join the chat at https://gitter.im/tongueroo/jack](https://badges.gitter.im/tongueroo/jack.svg)](https://gitter.im/tongueroo/jack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Support](https://img.shields.io/badge/get-support-blue.svg)](https://boltops.com?utm_source=badge&utm_medium=badge&utm_campaign=jack)
+
 
 Jack allows you to easily manage your AWS Elastic Beanstalk Jack environments.
 
@@ -33,7 +36,7 @@ Or if you prefer you can install ufo with RubyGems
 gem install jack-eb
 ```
 
-Note that the gem is called jack-eb but the actual command that is installed is called `jack`.  If you are installing jack with RubyGems you will need to handle installing the additional dependencies yourself. 
+Note that the gem is called jack-eb but the actual command that is installed is called `jack`.  If you are installing jack with RubyGems you will need to handle installing the additional dependencies yourself.
 
 Full installation instructions are on the [Installation docs](http://jack-eb.com/docs/install/).
 
