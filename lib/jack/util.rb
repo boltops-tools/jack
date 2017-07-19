@@ -47,6 +47,13 @@ module Jack::Util
     FileUtils.mkdir_p(folder) unless File.exist?(folder)
   end
 
+  # Sets up common prerequisites like setting up the .elasticbeanstsalk/ files
+  # for create or deploy to work
+  def prerequisites
+    check_aws_setup
+    Jack::EbConfig::Create.new(@options).sync unless @options[:noop]
+  end
+
   # Checks main if the ~/.aws/config has been set up properly. If it has not
   # print a message to the user and exit the program.
   def check_aws_setup

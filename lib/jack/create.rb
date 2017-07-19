@@ -12,9 +12,8 @@ module Jack
     end
 
     def run
-      check_aws_setup
+      prerequisites
       create_app
-      EbConfig::Create.new(@options).sync unless @options[:noop]
       create_env
     end
 

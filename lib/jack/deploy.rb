@@ -15,6 +15,7 @@ module Jack
         exit 1 unless ENV['TEST']
       end
 
+      prerequisites
       deploy
     end
 
