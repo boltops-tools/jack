@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.4.0]
+* fix jack deploy, remove debugging
+* fix embedded_eb lookup
+* add docs
+
 ## [1.3.0]
 - flatten cli interface: jack config apply -> jack apply
 
