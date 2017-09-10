@@ -15,6 +15,7 @@ module Jack
         exit 1 unless ENV['TEST']
       end
 
+      prerequisites
       deploy
     end
 
@@ -53,8 +54,7 @@ module Jack
       #                         source_location/repo/branch
       #   -p, --process         enable preprocessing of the application version
       command = "#{eb_bin} deploy#{eb_base_flags} #{@env_name} #{ENV['EB_OPTIONS']}"
-      puts "command #{command.inspect}"
-      # sh(command)
+      sh(command)
     end
   end
 end

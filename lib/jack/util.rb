@@ -47,6 +47,13 @@ module Jack::Util
     FileUtils.mkdir_p(folder) unless File.exist?(folder)
   end
 
+  # Sets up common prerequisites like setting up the .elasticbeanstsalk/ files
+  # for create or deploy to work
+  def prerequisites
+    check_aws_setup
+    Jack::EbConfig::Create.new(@options).sync unless @options[:noop]
+  end
+
   # Checks main if the ~/.aws/config has been set up properly. If it has not
   # print a message to the user and exit the program.
   def check_aws_setup
@@ -98,7 +105,7 @@ module Jack::Util
     return @@aws_bin = ENV["JACK_AWS_BIN"] if ENV["JACK_AWS_BIN"]
 
     which_aws = `which aws`.strip
-    return @@aws_bin = which_aws if which_aws
+    return @@aws_bin = which_aws if which_aws != ''
 
     embedded_aws = "/opt/bolts/embedded/bin/aws"
     return @@aws_bin = embedded_aws if File.exist?(embedded_aws)
@@ -131,10 +138,10 @@ module Jack::Util
     return @@eb_bin = ENV["JACK_EB_BIN"] if ENV["JACK_EB_BIN"]
 
     which_eb = `which eb`.strip
-    return @@eb_bin = which_eb if which_eb
+    return @@eb_bin = which_eb if which_eb != ''
 
     embedded_eb = "/opt/bolts/embedded/bin/eb"
-    return @@eb_bin = embedded_eb if File.exist?(embedded_aws)
+    return @@eb_bin = embedded_eb if File.exist?(embedded_eb)
 
     # if reach here we did not detect the eb binary
     message = "ERROR: Unable to auto detect an eb executable. Please make sure you have installed the eb cli tool.\n"
