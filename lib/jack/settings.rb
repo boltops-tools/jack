@@ -4,6 +4,13 @@ module Jack
       @root = root || '.'
     end
 
+    # The options from the files get merged with the following precedence:
+    #
+    # current folder - The current folder’s jack/settings.yml values take the highest precedence.
+    # user - The user’s ~/.jack/settings.yml values take the second highest precedence.
+    # default - The default settings bundled with the tool takes the lowest precedence.
+    #
+    # More info: http://jack-eb.com/docs/settings/
     def data
       return @settings_yaml if @settings_yaml
 

@@ -122,7 +122,7 @@ module Jack::Util
   #   3. /opt/bolts/embedded/bin/eb - This comes packaged with the the bolts toolbelt.
   #      https://boltops.com/toolbelt
   #
-  # If an eb installation is not deetcted it'll display a message and exit the program.
+  # If an eb installation is not detected it'll display a message and exit the program.
   def eb_bin
     return @@eb_bin if @@eb_bin
 

@@ -1,5 +1,5 @@
 create:
   keyname: default
-  platform: "64bit Amazon Linux 2017.03 v2.6.0 running Docker 1.12.6"
+  platform: "64bit Amazon Linux 2017.03 v2.7.0 running Docker 17.03.1-ce"
 conventions:
   app_name_pattern: !ruby/regexp /(\w+)-\w+-\w+/
