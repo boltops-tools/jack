@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.4.2]
+* update default platform
+
 ## [1.4.1]
 * ensure jack deploy works on freshly clone project with existing app
 
