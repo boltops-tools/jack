@@ -37,8 +37,8 @@ module Jack
 If the difference is not what you expected, you should say no.
 If you want to download the config from the environment and get #{@local_config_path}
 back in sync, you can use this command:
-  $ jack config get #{@env_name}
-  $ jack config get -h # for more info
+  $ jack get #{@env_name}
+  $ jack get -h # for more info
 EOL
         message
       end
