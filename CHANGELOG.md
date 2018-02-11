@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.4.3]
+- Merge pull request #13 from maciejwalkowiak/patch-1: Fix hint message
+- update install notes
+
 ## [1.4.2]
 * update default platform
 
