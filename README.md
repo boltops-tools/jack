@@ -24,13 +24,7 @@ This blog post also provides a good introduction and shows off useful examples o
 
 ## Installation
 
-If you want to quickly install jack without having to worry about jack’s dependencies you can simply install the Bolts Toolbelt which has jack included.
-
-```sh
-brew cask install boltopslabs/software/bolts
-```
-
-Or if you prefer you can install ufo with RubyGems
+Install jack with RubyGems:
 
 ```sh
 gem install jack-eb
@@ -38,7 +32,7 @@ gem install jack-eb
 
 Note that the gem is called jack-eb but the actual command that is installed is called `jack`.  If you are installing jack with RubyGems you will need to handle installing the additional dependencies yourself.
 
-Full installation instructions are on the [Installation docs](http://jack-eb.com/docs/install/).
+More installation instructions are on the [Installation docs](http://jack-eb.com/docs/install/).
 
 ## Conventions
 
