@@ -155,7 +155,7 @@ module Jack::Util
     region = get_region
     profile = ENV['AWS_PROFILE']
     flags = {
-      profile: region ? " --profile #{profile}" : "",
+      profile: profile ? " --profile #{profile}" : "",
       region: region ? " -r #{region}" : ""
     }
     @eb_base_flags = "#{flags[:profile]}#{flags[:region]}"
