@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [1.4.4]
+- fix yaml formatter for new versions of ruby: pull request #15
+- Small typo for profile: pull request #14 Thanks @luca3m
+
 ## [1.4.3]
 - Merge pull request #13 from maciejwalkowiak/patch-1: Fix hint message
 - update install notes
