@@ -9,6 +9,7 @@ module Jack
     class YamlFormatter
       def process(file)
         data = YAML.load_file(file)
+        data = sort_top_level_keys(data)
         data = strip_metadata_dates(data)
         dump = YAML.dump(data).gsub("!ruby/object:Hash", '')
         lines = dump.split("\n")
@@ -26,6 +27,13 @@ module Jack
           metadata.delete('DateCreated')
         end
         data
+      end
+
+      def sort_top_level_keys(data)
+        data.keys.sort.inject({}) do |result, k|
+          result[k] = data[k]
+          result
+        end
       end
     end
   end
