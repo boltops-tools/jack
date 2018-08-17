@@ -27,11 +27,11 @@ EOL
 
     it "process should strip date modified and created" do
       input = <<-EOL
+AWSConfigurationTemplateVersion: 1.1.0.0
 EnvironmentConfigurationMetadata:
   DateModified: '1425215243000'
   Description: test.
   DateCreated: '1425215243000'
-AWSConfigurationTemplateVersion: 1.1.0.0
 EOL
       file = "spec/fixtures/fake.cfg.yml"
 
