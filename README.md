@@ -1,9 +1,7 @@
 # Jack and the Elastic Beanstalk
 
-[![ReadmeCI](http://www.readmeci.com/images/readmeci-badge.svg)](http://www.readmeci.com/tongueroo/jack)
 [![CircleCI](https://circleci.com/gh/tongueroo/jack.svg?style=svg)](https://circleci.com/gh/tongueroo/jack)
 [![Code Climate](https://codeclimate.com/github/tongueroo/jack/badges/gpa.svg)](https://codeclimate.com/github/tongueroo/jack)
-[![Test Coverage](https://codeclimate.com/github/tongueroo/jack/badges/coverage.svg)](https://codeclimate.com/github/tongueroo/jack)
 [![Join the chat at https://gitter.im/tongueroo/jack](https://badges.gitter.im/tongueroo/jack.svg)](https://gitter.im/tongueroo/jack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Support](https://img.shields.io/badge/get-support-blue.svg)](https://boltops.com?utm_source=badge&utm_medium=badge&utm_campaign=jack)
 
