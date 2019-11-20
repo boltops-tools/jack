@@ -5,6 +5,7 @@
 [![Join the chat at https://gitter.im/tongueroo/jack](https://badges.gitter.im/tongueroo/jack.svg)](https://gitter.im/tongueroo/jack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Support](https://img.shields.io/badge/get-support-blue.svg)](https://boltops.com?utm_source=badge&utm_medium=badge&utm_campaign=jack)
 
+[![BoltOps Badge](https://img.boltops.com/boltops/badges/boltops-badge.png)](https://www.boltops.com)
 
 Jack allows you to easily manage your AWS Elastic Beanstalk Jack environments.
 
